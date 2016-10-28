@@ -13,11 +13,14 @@
          * initSwiper
          */
         initSwiper: function () {
-            $(".swiper-container").swiper({
-                loop: true,
-                pagination: '.swiper-pagination',
-                autoplay: 5000
-            });
+            var $swiperContainer = $(".swiper-container");
+            if ($swiperContainer.length > 0) {
+                $swiperContainer.swiper({
+                    loop: true,
+                    pagination: '.swiper-pagination',
+                    autoplay: 5000
+                });
+            }
         },
         /**
          * initNavWrap
@@ -34,7 +37,7 @@
 
     };
     window.DJ = DJ;
-})(window.jQuery || window.Zepto);
+})(window.jQuery);
 
 $(function () {
     DJ.init();
