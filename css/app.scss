@@ -40,6 +40,18 @@ img {
   max-width: 100%;
 }
 
+.ul, .ol {
+  list-style: none;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
 .bg-white {
   background-color: #ffffff !important;
 }
@@ -405,6 +417,227 @@ img {
     p {
       margin: $space-sm 0;
     }
+  }
+}
+
+.trends-wrap {
+  padding: $space-sm;
+}
+
+.trends-time {
+  text-align: center;
+  background-color: #ffffff;
+  margin-bottom: $space-sm;
+  i {
+    position: relative;
+    top: -1px;
+    display: inline-block;
+    width: .3rem;
+    height: .3rem;
+    vertical-align: middle;
+    line-height: .3rem;
+    text-align: center;
+    @include border-radius(50%);
+    font-size: $fz-sm;
+    color: #ffffff;
+    background-color: $color-danger;
+  }
+  span {
+    font-size: $fz-sm;
+    color: $color-light;
+  }
+}
+
+.trends-media {
+  background-color: #ffffff;
+  & + .trends-media {
+    margin-top: $space-sm;
+  }
+  .media-link {
+    display: block;
+  }
+  .trends-body {
+    padding: 0 $space-sm;
+  }
+  h3 {
+    padding: $space-normal 0 $space-xs;
+    color: $color-normal;
+    font-weight: normal;
+    font-size: $fz-big;
+  }
+  p {
+    color: $color-light;
+    font-size: $fz-sm;
+    margin-bottom: $space-xs;
+  }
+}
+
+.media-img {
+  margin-bottom: $space-sm;
+  @include flexbox();
+  @include justify-content(space-between);
+  li {
+    width: 1.8rem;
+    height: 1.8rem;
+    background: center no-repeat;
+    @include background-size(cover);
+  }
+}
+
+.media-footer {
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(space-between);
+  padding: $space-xs $space-sm;
+  & > span {
+    font-size: $fz-xs;
+    color: #d0d0d0;
+  }
+}
+
+.media-control {
+  color: #d0d0d0;
+  @include flexbox();
+  @include align-items(center);
+  .control-btn {
+    font-size: $fz-xs;
+    color: #d0d0d0;
+    &.active {
+      color: $color-danger;
+    }
+    & + .control-btn {
+      margin-left: $space-sm;
+    }
+  }
+}
+
+.detail-footer {
+  padding: $space-sm 0;
+  color: #d0d0d0;
+  font-size: $fz-xs;
+  @include clearfix();
+  span {
+    & + span {
+      &:before {
+        padding: 0 $space-xs;
+        content: '·';
+      }
+    }
+  }
+}
+
+.comment-wrap {
+  margin-top: $space-sm;
+  background-color: #ffffff;
+}
+
+.comment-panel {
+  .weui_panel_hd {
+    color: $color-normal;
+    font-size: $fz-normal;
+  }
+  .weui_media_box {
+    .weui_media_title {
+      color: $color-lighter;
+      font-size: $fz-sm;
+      span {
+        font-size: $fz-xs;
+      }
+    }
+    .weui_media_desc {
+      color: $color-normal;
+      display: block;
+    }
+  }
+}
+
+.fixed-control {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: .88rem;
+  background-color: #fafafa;
+  text-align: center;
+  @include flexbox();
+  @include align-items(center);
+  @include box-shadow(0 0 5px rgba(0, 0, 0, .2));
+  .control-btn {
+    position: relative;
+    display: block;
+    height: 100%;
+    &.active {
+      color: $color-danger !important;
+    }
+    i {
+      font-size: $fz-big;
+    }
+  }
+  .comment-control {
+    @include flexbox();
+    @include align-items(center);
+    @include flex(1);
+    .control-btn {
+      @include flex(1);
+      color: #d0d0d0;
+      sup {
+        font-size: $fz-xs;
+      }
+    }
+  }
+  .comment-add {
+    width: 2.84rem;
+    height: .88rem;
+    line-height: .88rem;
+    .control-btn {
+      color: $color-normal;
+      font-size: $fz-sm;
+      i {
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.heart-icon {
+  position: absolute;
+  width: 1.2rem;
+  top: -$space-normal;
+  left: 10%;
+  @include scale(0);
+  @include opacity(0);
+}
+
+#heart-btn {
+  &.active {
+    .heart-icon {
+      @include animation(heart ease-out 1s);
+    }
+  }
+}
+
+@include keyframes(heart) {
+  0% {
+    top: -$space-normal;
+    left: 10%;
+    @include scale(0);
+    @include opacity(0);
+  }
+  30% {
+    top: -2rem;
+    left: 70%;
+    @include scale(1);
+    @include opacity(1);
+  }
+  80% {
+    top: -2rem;
+    left: 70%;
+    @include scale(1);
+    @include opacity(1);
+  }
+  100% {
+    @include scale(0);
+    @include opacity(0);
   }
 }
 
