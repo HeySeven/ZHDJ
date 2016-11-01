@@ -299,14 +299,14 @@ img {
       height: 2px;
       background-color: #ff423f; }
     .fixed-nav-bar .weui_tabbar_item.weui_bar_item_on .weui_tabbar_icon i {
-      font-size: .4rem;
+      font-size: .5rem;
       color: #ff423f; }
     .fixed-nav-bar .weui_tabbar_item.weui_bar_item_on .weui_tabbar_label {
       color: #3a3a3a; }
   .fixed-nav-bar .weui_tabbar_icon {
     line-height: .48rem; }
     .fixed-nav-bar .weui_tabbar_icon i {
-      font-size: .4rem; }
+      font-size: .5rem; }
   .fixed-nav-bar .weui_tabbar_label {
     margin-top: 0;
     font-size: 0.2rem; }
