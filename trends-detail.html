@@ -7,7 +7,7 @@
     <meta name="renderer" content="webkit">
     <title>动态详情</title>
     <link rel="stylesheet" href="css/weui/weui.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_ahf7fpgjg4s7cik9.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_ep47xnbwxq6t7qfr.css">
     <link rel="stylesheet" href="css/jquery-weui/jquery-weui.css">
     <link rel="stylesheet" href="css/app.css">
 </head>
@@ -95,33 +95,34 @@
 
 <div class="fixed-control">
     <div class="comment-control ui-border-r">
-        <a id="heart-btn" href="###" class="control-btn">
+        <a data-toggle="add-btn" id="heart-btn" href="###" class="control-btn">
             <img class="heart-icon" src="images/click-heart.png" alt="">
-            <i class="iconfont icon-favorite"></i>
+            <i class="iconfont icon-iconlike"></i>
+            <i class="iconfont icon-iconlikec"></i>
             <sup>67</sup>
         </a>
         <a href="###" class="control-btn">
-            <i class="iconfont icon-good"></i>
+            <i class="iconfont icon-iconcomment"></i>
             <sup>267</sup>
         </a>
-        <a href="###" class="control-btn">
-            <i class="iconfont icon-comments"></i>
+        <a data-toggle="add-btn" id="store-btn" href="###" class="control-btn">
+            <i class="iconfont icon-iconcollection"></i>
+            <i class="iconfont icon-iconcollectionc"></i>
             <sup>12</sup>
         </a>
     </div>
     <div class="comment-add">
-        <a href="###" class="control-btn">
-            <i class="iconfont icon-comments"></i>
+        <a data-toggle="comment-btn" href="###" class="control-btn">
+            <i class="iconfont icon-iconcomment"></i>
             <span>添加你的评论</span>
         </a>
     </div>
 </div>
+<div class="fixed-control fixed-comment">
+    <input class="comment-input" type="text" placeholder="添加你的评论">
+    <a href="###" class="comment-submit">发送</a>
+</div>
 <script src="js/base.min.js"></script>
 <script src="js/app.min.js"></script>
-<script>
-    $('#heart-btn').click(function(){
-        $(this).toggleClass('active');
-    })
-</script>
 </body>
 </html>
