@@ -21,20 +21,22 @@
         </div>
         <div class="center">发布状态</div>
         <div class="right">
-            <a href="###" class="link">
+            <a id="submit-btn" href="###" class="link">
                 保存
             </a>
         </div>
     </div>
 </div>
 <div class="container bg-white">
-    <div class="public-tit-wrap">
-        <input class="public-tit-input" type="text" placeholder="输入状态标题">
-        <a href="###" class="iconfont icon-icondelete"></a>
-    </div>
-    <div class="public-content-wrap">
-        <textarea class="public-content-textarea" placeholder="说点什么" name="" id="" rows="10"></textarea>
-    </div>
+    <form id="publish-form" action="">
+        <div class="public-tit-wrap">
+            <input required class="public-tit-input" type="text" placeholder="输入状态标题">
+            <a id="clear-val" href="###" class="iconfont icon-icondelete"></a>
+        </div>
+        <div class="public-content-wrap">
+            <textarea class="public-content-textarea" placeholder="说点什么" name="" id="" rows="10"></textarea>
+        </div>
+    </form>
     <div class="publish-upload">
         <div id="uploader"></div>
         <label class="upload-btn iconfont icon-iconimg" for="publish-uploader"></label>
@@ -45,40 +47,76 @@
 <script src="js/plugins/weui.js"></script>
 <script src="js/app.min.js"></script>
 <script>
-    //api==========https://github.com/progrape/weui.js/wiki/uploader
-    $('#uploader').uploader({
-        id:'publish-uploader',
-        title:'',
-        maxCount: 2,
-        onChange: function (file) {
-            var update = this.update;
-            var success = this.success;
-            var error = this.error;
-            $.ajax({
-                type: 'POST',
-                url: '/api/v1/upload?format=base64',
-                data: {
-                    data: file.data
-                },
-                xhr: function() {
-                    var xhr = new window.XMLHttpRequest();
-                    xhr.addEventListener('progress', function(evt) {
-                        if (evt.lengthComputable) {
-                            var percentComplete = evt.loaded / evt.total;
-                            update(percentComplete + '%');
-                        }
-                    }, false);
-                    return xhr;
-                },
-                success: function(res){
-                    success();
-                },
-                error: function (err){
-                    error();
-                }
-            });
-        }
-    });
+
+    $(function () {
+        var $publicTit = $('input.public-tit-input');
+        var $publicContent = $('.public-content-textarea');
+        //clearVal
+        $(document).on("input propertychange", "input.public-tit-input", function () {
+            var $clearVal = $('#clear-val');
+            var valLength = $(this).val().length;
+            if (valLength == 0) {
+                $clearVal.hide();
+            } else {
+                $clearVal.show();
+            }
+        });
+        $(document).on("click", "#clear-val", function () {
+            $publicTit.val('').focus();
+            $(this).hide();
+        });
+
+        $('#submit-btn').click(function () {
+            var titVal = $publicTit.val();
+            var contentVal = $publicContent.val();
+            if (titVal == '') {
+                $.toast(" <i class='iconfont icon-iconcry'></i> 状态标题不能为空", "text");
+                $publicTit.focus();
+            } else if (contentVal == '') {
+                $.toast("帖子内容不能为空", "text");
+                $publicContent.focus();
+            } else {
+                $('#publish-form').submit();
+            }
+        });
+
+        //api==========https://github.com/progrape/weui.js/wiki/uploader
+        $('#uploader').uploader({
+            id: 'publish-uploader',
+            title: '',
+            maxCount: 6,
+            onChange: function (file) {
+                var update = this.update;
+                var success = this.success;
+                var error = this.error;
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/v1/upload?format=base64',
+                    data: {
+                        data: file.data
+                    },
+                    xhr: function () {
+                        var xhr = new window.XMLHttpRequest();
+                        xhr.addEventListener('progress', function (evt) {
+                            if (evt.lengthComputable) {
+                                var percentComplete = evt.loaded / evt.total;
+                                update(percentComplete + '%');
+                            }
+                        }, false);
+                        return xhr;
+                    },
+                    success: function (res) {
+                        success();
+                    },
+                    error: function (err) {
+                        error();
+                    }
+                });
+            }
+        });
+
+    })
+
 </script>
 </body>
 </html>

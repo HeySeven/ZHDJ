@@ -739,6 +739,7 @@ img {
     }
   }
   .iconfont {
+    display: none;
     position: absolute;
     top: .33rem;
     right: .3rem;
@@ -777,10 +778,69 @@ img {
   bottom: 0;
   right: 0;
   padding: $space-sm;
+  text-align: right;
   .weui_uploader_hd{
     display: none;
   }
   .weui_uploader_input_wrp{
     display: none;
   }
+  .upload-btn{
+    font-size: .5rem;
+    color: $color-danger;
+  }
+  .weui_uploader_file{
+    position: relative;
+    margin-right: 0.1rem;
+    margin-bottom: 0.1rem;
+    text-align: center;
+    width: 1.92rem;
+    height: 1.92rem;
+    i.iconfont{
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #ffffff;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: .28rem;
+      height: .28rem;
+      line-height: .28rem;
+      font-size: $fz-xs;
+    }
+  }
+  .weui_uploader_input_wrp{
+    width: 1.92rem;
+    height: 1.92rem;
+  }
 }
+
+
+.weui_toast_text{
+  height: .54rem;
+  line-height:.54rem;
+  .weui_toast_content{
+    margin: 0 .4rem;
+    font-size:$fz-sm;
+    color: #c3c3c3;
+    .iconfont{
+      vertical-align: middle;
+      color: $color-danger;
+      font-size: $fz-larger;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
