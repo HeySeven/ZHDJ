@@ -2,8 +2,7 @@
   z-index: 600;
   opacity: 0;
   transition: opacity .3s;
-
-  &.weui_toptips_visible {
-    opacity: 1;
-  }
+}
+.weui_toptips.weui_toptips_visible {
+  opacity: 1;
 }

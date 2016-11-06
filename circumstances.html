@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>记户情</title>
+    <link rel="stylesheet" href="css/weui/weui.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_q5lsyf54w1giudi.css">
+    <link rel="stylesheet" href="css/jquery-weui/jquery-weui.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="navbar ui-border-b">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="link">
+                <i class="iconfont icon-icondelete"></i>
+            </a>
+        </div>
+        <div class="center">记户情</div>
+        <div class="right">
+            <a id="submit-btn" href="###" class="link link-small">
+                保存
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <form id="circ-form">
+        <div class="weui_cells weui_cells_form m-t">
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">户主姓名</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" type="text" required
+                           placeholder="请输入户主姓名" emptyTips="请输入户主姓名">
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd"><label class="weui_label">联系电话</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" type="tel" required pattern="[0-9]" maxlength="11"
+                           emptyTips="请输入联系电话" notMatchTips="请输入正确的手机号" placeholder="请输入联系电话">
+                </div>
+            </div>
+        </div>
+        <div class="weui_cells weui_cells_access m-t">
+            <a id="get-position" class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>家庭住址</p>
+                </div>
+                <div id="local-wrap" class="weui_cell_ft">地图定位</div>
+            </a>
+        </div>
+        <div class="weui_cells weui_cells_form m-t">
+            <div class="weui_cell arrow-cell">
+                <div class="weui_cell_hd"><label class="weui_label">户情事件</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" id="event" type="text" value="五保户" readonly="">
+                </div>
+            </div>
+        </div>
+        <div class="weui_cells weui_cells_form m-t">
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <textarea class="weui_textarea" required placeholder="添加户情介绍" rows="3"></textarea>
+                    <div class="weui_textarea_counter"><span>0</span>/200</div>
+                </div>
+            </div>
+        </div>
+        <div class="publish-upload static-upload">
+            <div id="uploader"></div>
+            <label class="upload-btn iconfont icon-iconimg" for="publish-uploader"></label>
+        </div>
+    </form>
+</div>
+
+<script src="js/base.min.js"></script>
+<script src="js/plugins/weui.js"></script>
+<script src="js/app.min.js"></script>
+
+<script charset="UTF-8">
+
+    $(function () {
+
+        //地址跳转
+        var urlStr = window.location.href;
+        console.log(urlStr);
+        $('#get-position').click(function () {
+            var hrefString = 'http://apis.map.qq.com/tools/locpicker?search=1&type=0&backurl=' + urlStr + '&key=K3HBZ-JBFHX-2ZT4R-7GJSW-FPGHQ-O6FW6&referer=智慧党建'
+            window.location.href = hrefString;
+        });
+
+        //户情事件
+        $("#event").select({
+            title: "选择户情事件",
+            items: ["五保户", "留守儿童", "农民工就业", "医疗卫生", "教育资源 "],
+            closeText: '<i class="iconfont icon-back"> </i>'
+        });
+
+        //表单验证
+        var $circForm = $("#circ-form");
+        $circForm.form();
+        $('#submit-btn').click(function () {
+            $circForm.validate();
+        });
+
+        //api==========https://github.com/progrape/weui.js/wiki/uploader
+        $('#uploader').uploader({
+            id: 'publish-uploader',
+            title: '',
+            maxCount: 6,
+            onChange: function (file) {
+                var update = this.update;
+                var success = this.success;
+                var error = this.error;
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/v1/upload?format=base64',
+                    data: {
+                        data: file.data
+                    },
+                    xhr: function () {
+                        var xhr = new window.XMLHttpRequest();
+                        xhr.addEventListener('progress', function (evt) {
+                            if (evt.lengthComputable) {
+                                var percentComplete = evt.loaded / evt.total;
+                                update(percentComplete + '%');
+                            }
+                        }, false);
+                        return xhr;
+                    },
+                    success: function (res) {
+                        success();
+                    },
+                    error: function (err) {
+                        error();
+                    }
+                });
+            }
+        });
+
+    })
+
+</script>
+</body>
+</html>

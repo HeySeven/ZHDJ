@@ -162,6 +162,19 @@ img {
 .screen-lock {
   overflow: hidden; }
 
+.m {
+  margin: 0.2rem; }
+
+.m-tb {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem; }
+
+.m-t {
+  margin-top: 0.2rem; }
+
+.m-b {
+  margin-bottom: 0.2rem; }
+
 .container {
   padding-bottom: 1rem;
   height: 100%;
@@ -1068,5 +1081,97 @@ img {
       vertical-align: middle;
       color: #ff423f;
       font-size: 0.36rem; }
+
+.arrow-cell:after {
+  content: " ";
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border-width: 1px 1px 0 0;
+  border-color: #C8C8CD;
+  border-style: solid;
+  transform: rotate(45deg);
+  position: relative;
+  top: 0;
+  margin-left: .3em; }
+
+.toolbar .picker-button {
+  font-size: .32rem; }
+
+.static-upload {
+  position: static; }
+  .static-upload .upload-btn {
+    position: fixed;
+    right: .2rem;
+    bottom: .2rem; }
+
+.navbar-danger {
+  background-color: #ff423f; }
+  .navbar-danger .center {
+    color: #fff; }
+  .navbar-danger .left .link, .navbar-danger .right .link {
+    color: #fff; }
+
+.sign-panel {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+  height: 4.22rem;
+  padding-top: .4rem;
+  -webkit-box-shadow: 0 5px 10px rgba(142, 142, 142, 0.15);
+  -moz-box-shadow: 0 5px 10px rgba(142, 142, 142, 0.15);
+  box-shadow: 0 5px 10px rgba(142, 142, 142, 0.15); }
+  .sign-panel .sign-panel-header {
+    font-size: 0.28rem;
+    padding-bottom: .2rem; }
+  .sign-panel .sign-btn {
+    display: inline-block; }
+    .sign-panel .sign-btn img {
+      width: 2.62rem;
+      -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%; }
+
+.sign-history {
+  background-color: #ffffff;
+  margin: 0 0.2rem 0.3rem;
+  padding: 0.1rem;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); }
+
+.sign-history-header {
+  padding: 0.1rem 0.2rem; }
+  .sign-history-header:before, .sign-history-header:after {
+    content: " ";
+    display: table; }
+  .sign-history-header:after {
+    clear: both; }
+  .sign-history-header strong {
+    font-weight: normal;
+    font-size: 0.28rem;
+    color: #3a3a3a; }
+  .sign-history-header .sign-link {
+    margin-top: .06rem;
+    float: right;
+    font-size: 0.24rem;
+    color: #939393; }
+
+.weui-picker-calendar .toolbar {
+  margin-bottom: 0; }
+
+.sign-calendar.no-bar .toolbar {
+  display: none; }
+.sign-calendar .toolbar:after, .sign-calendar .picker-calendar-week-days:after, .sign-calendar .picker-calendar-row:after {
+  display: none; }
+.sign-calendar .picker-calendar-week-days {
+  background-color: transparent; }
 
 /*# sourceMappingURL=app.css.map */

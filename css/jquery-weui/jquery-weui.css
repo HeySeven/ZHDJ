@@ -879,37 +879,38 @@ label > * {
 .toolbar {
   position: relative;
   width: 100%;
-  font-size: .85rem;
+  font-size: .34rem;
   line-height: 1.5;
   color: #3d4145;
-  background: #f7f7f8;
+  background: #fff;
+  margin-bottom: .2rem;
 }
-.toolbar:before {
+.toolbar:after {
   content: '';
   position: absolute;
   left: 0;
-  top: 0;
-  bottom: auto;
+  bottom: 0;
   right: auto;
+  top: auto;
   height: 1px;
   width: 100%;
   background-color: #d9d9d9;
   display: block;
   z-index: 15;
-  transform-origin: 50% 0%;
+  transform-origin: 50% 100%;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-  .toolbar:before {
+  .toolbar:after {
     transform: scaleY(0.5);
   }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 3) {
-  .toolbar:before {
+  .toolbar:after {
     transform: scaleY(0.33);
   }
 }
 .toolbar .toolbar-inner {
-  height: 2.2rem;
+  height: .8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -921,35 +922,35 @@ label > * {
   display: block;
   width: 100%;
   padding: 0;
-  font-size: .85rem;
+  font-size: .34rem;
   font-weight: normal;
-  line-height: 2.2rem;
+  line-height: .8rem;
   color: #3d4145;
   text-align: center;
   white-space: nowrap;
 }
 .toolbar .picker-button {
   position: absolute;
-  right: 0;
+  left: 0;
   box-sizing: border-box;
-  height: 2.2rem;
-  line-height: 2.2rem;
-  color: #04BE02;
+  height: .8rem;
+  line-height: .8rem;
+  color: #3a3a3a;
   z-index: 1;
-  padding: 0 .5rem;
+  padding: 0 .2rem;
 }
 /* === Columns Picker === */
 .weui-picker-modal {
   width: 100%;
   position: absolute;
-  bottom: 0;
+  top: 0;
   text-align: center;
   border-radius: 0;
   opacity: 0.6;
   color: #3d4145;
   transition-duration: .3s;
   height: 13rem;
-  background: #EFEFF4;
+  background: #f7f7f7;
   transform: translate3d(0, 100%, 0);
   transition-property: transform, opacity;
 }
@@ -1149,12 +1150,12 @@ label > * {
 .weui-picker-overlay,
 .weui-picker-container {
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
-  height: 0;
+  bottom: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 600;
 }
 .city-picker .picker-items-col {
   flex: 1;
@@ -1168,7 +1169,7 @@ label > * {
   text-overflow: initial;
 }
 .weui-select-modal {
-  height: auto;
+  height: 100%;
 }
 .weui-select-modal .weui_cells {
   overflow-y: auto;
@@ -1181,22 +1182,20 @@ label > * {
 /* === Calendar === */
 .weui-picker-calendar {
   background: #fff;
-  height: 15rem;
   width: 100%;
   overflow: hidden;
 }
 .weui-picker-calendar .picker-modal-inner {
   overflow: hidden;
-  height: 12.8rem;
 }
 .picker-calendar-week-days {
-  height: .9rem;
+  height: .6rem;
   background: #f7f7f8;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  font-size: 11px;
+  font-size: .24rem;
   box-sizing: border-box;
   position: relative;
 }
@@ -1232,11 +1231,11 @@ label > * {
   width: -webkit-calc(100% / 7);
   width: -moz-calc(100% / 7);
   width: calc(100% / 7);
-  line-height: 17px;
+  line-height: .6rem;
   text-align: center;
 }
 .picker-calendar-week-days + .picker-calendar-months {
-  height: 11.9rem;
+  height: 4rem;
 }
 .picker-calendar-months {
   width: 100%;
@@ -1331,7 +1330,7 @@ label > * {
   width: calc(100% / 7);
   text-align: center;
   color: #3d4145;
-  font-size: 15px;
+  font-size: .24rem;
   cursor: pointer;
 }
 .picker-calendar-day.picker-calendar-day-prev,
@@ -1346,7 +1345,7 @@ label > * {
   background: #e3e3e3;
 }
 .picker-calendar-day.picker-calendar-day-selected span {
-  background: #04BE02;
+  background: #ff423f;
   color: #fff;
 }
 .picker-calendar-day span {
@@ -1441,15 +1440,15 @@ label > * {
 .picker-calendar-month-picker,
 .picker-calendar-year-picker {
   display: block;
-  line-height: 2.2rem;
+  line-height: .8rem;
   flex: 1;
 }
 .picker-calendar-month-picker a.icon-only,
 .picker-calendar-year-picker a.icon-only {
   float: left;
   width: 25%;
-  height: 2.2rem;
-  line-height: 2rem;
+  height: .8rem;
+  line-height: .8rem;
 }
 .picker-calendar-month-picker .current-month-value,
 .picker-calendar-year-picker .current-month-value,
@@ -1457,7 +1456,8 @@ label > * {
 .picker-calendar-year-picker .current-year-value {
   float: left;
   width: 50%;
-  height: 2.2rem;
+  height: .8rem;
+  font-size: .28rem;
 }
 i.icon {
   display: inline-block;
@@ -1470,14 +1470,14 @@ i.icon {
 }
 i.icon.icon-next,
 i.icon.icon-prev {
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 0.3rem;
+  height: 0.3rem;
 }
 i.icon.icon-next {
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2015%2015'%3E%3Cg%3E%3Cpath%20fill%3D'%2304BE02'%20d%3D'M1%2C1.6l11.8%2C5.8L1%2C13.4V1.6%20M0%2C0v15l15-7.6L0%2C0L0%2C0z'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2015%2015'%3E%3Cg%3E%3Cpath%20fill%3D'%23d0d0d0'%20d%3D'M1%2C1.6l11.8%2C5.8L1%2C13.4V1.6%20M0%2C0v15l15-7.6L0%2C0L0%2C0z'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
 }
 i.icon.icon-prev {
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2015%2015'%3E%3Cg%3E%3Cpath%20fill%3D'%2304BE02'%20d%3D'M14%2C1.6v11.8L2.2%2C7.6L14%2C1.6%20M15%2C0L0%2C7.6L15%2C15V0L15%2C0z'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2015%2015'%3E%3Cg%3E%3Cpath%20fill%3D'%23d0d0d0'%20d%3D'M14%2C1.6v11.8L2.2%2C7.6L14%2C1.6%20M15%2C0L0%2C7.6L15%2C15V0L15%2C0z'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
 }
 /**
  * Swiper 3.3.1
@@ -2281,7 +2281,7 @@ button.swiper-pagination-bullet {
   background-color: #4cd964;
 }
 .weui_toptips {
-  z-index: 100;
+  z-index: 600;
   opacity: 0;
   transition: opacity .3s;
 }

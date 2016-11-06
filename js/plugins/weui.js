@@ -10,7 +10,6 @@
     function _validate($input) {
         var input = $input[0],
             val = $input.val();
-
         if (input.tagName == "INPUT" || input.tagName == "TEXTAREA") {
             var reg = input.getAttribute("required") || input.getAttribute("pattern") || "";
 

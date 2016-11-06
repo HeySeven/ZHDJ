@@ -330,7 +330,7 @@ button.weui_btn_plain_default, input.weui_btn_plain_default {
 .weui_cells {
   margin-top: 0;
   background-color: #FFFFFF;
-  line-height: 1.21429;
+  line-height: 1.64286;
   font-size: 0.28rem;
   overflow: hidden;
   position: relative; }
@@ -437,7 +437,7 @@ a.weui_cell {
 .weui_cells_radio .weui_check:checked + .weui_icon_checked:before {
   display: block;
   content: '\EA08';
-  color: #09BB07;
+  color: #ff423f;
   font-size: 16px; }
 
 .weui_cells_checkbox .weui_cell_hd {
@@ -468,8 +468,8 @@ a.weui_cell {
   background-color: transparent;
   font-size: inherit;
   color: inherit;
-  height: 1.21429em;
-  line-height: 1.21429; }
+  height: 1.64286em;
+  line-height: 1.64286; }
   .weui_input::-webkit-outer-spin-button, .weui_input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0; }
@@ -496,7 +496,7 @@ a.weui_cell {
   transform: translateZ(0);
   width: 100%;
   top: 0;
-  line-height: 2.3;
+  line-height: .8rem;
   font-size: 14px;
   text-align: center;
   color: #FFF;
@@ -543,7 +543,7 @@ a.weui_cell {
   width: 100%;
   font-size: inherit;
   height: .86rem;
-  line-height: 0.74rem;
+  line-height: 0.86rem;
   position: relative;
   z-index: 1;
   padding-left: 0.3rem; }
@@ -576,7 +576,7 @@ a.weui_cell {
   width: 100%;
   font-size: inherit;
   height: .86rem;
-  line-height: 0.74rem;
+  line-height: 0.86rem;
   position: relative;
   z-index: 1;
   padding-left: 0.3rem; }
@@ -647,7 +647,7 @@ a.weui_cell {
   width: 100%;
   font-size: inherit;
   height: .86rem;
-  line-height: 0.74rem;
+  line-height: 0.86rem;
   position: relative;
   z-index: 1;
   padding-left: 0.3rem; }
@@ -663,12 +663,12 @@ a.weui_cell {
   padding-bottom: 0; }
   .weui_vcode .weui_cell_ft img {
     margin-left: 5px;
-    height: 0.74rem;
+    height: 0.86rem;
     vertical-align: middle; }
 
 .weui_cell_switch {
-  padding-top: 0.05rem;
-  padding-bottom: 0.05rem; }
+  padding-top: 0.11rem;
+  padding-bottom: 0.11rem; }
 
 .weui_switch {
   appearance: none;
