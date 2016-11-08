@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>统计</title>
+    <link rel="stylesheet" href="css/weui/weui.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_q5lsyf54w1giudi.css">
+    <link rel="stylesheet" href="css/jquery-weui/jquery-weui.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="navbar navbar-danger">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="link">
+                <i class="iconfont icon-back"></i>
+            </a>
+        </div>
+        <div class="center">统计</div>
+        <div class="right">
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="statistics-wrap">
+        <div class="sign-history-body">
+            <div class="sign-calendar no-bar" id="inline-calendar">
+                <input id="sign-input" type="hidden" data-toggle='date'/>
+            </div>
+        </div>
+        <div class="statistics-info m-b">
+            <div class="weui_cells_title">数据统计</div>
+            <div class="weui_cells">
+                <div class="weui_cell">
+                    <div class="weui_cell_hd">
+                        <span class="dot dot-default"></span>
+                    </div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>当月签到天数</p>
+                    </div>
+                    <div class="weui_cell_ft">
+                        <strong class="text-default">5</strong>天
+                    </div>
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_hd">
+                        <span class="dot dot-danger"></span>
+                    </div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>当月未签到天数</p>
+                    </div>
+                    <div class="weui_cell_ft">
+                        <strong class="text-danger">26</strong>天
+                    </div>
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_hd">
+                        <span class="dot dot-success"></span>
+                    </div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>在岗次数</p>
+                    </div>
+                    <div class="weui_cell_ft">
+                        <strong class="text-success">6</strong>次
+                    </div>
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_hd">
+                        <span class="dot dot-warning"></span>
+                    </div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>未在岗次数</p>
+                    </div>
+                    <div class="weui_cell_ft">
+                        <strong class="text-warning">6</strong>次
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="weui_tabbar fixed-nav-bar">
+    <a href="javascript:;" class="weui_tabbar_item weui_bar_item_on">
+        <div class="weui_tabbar_icon">
+            <i class="iconfont icon-icobusiness"></i>
+        </div>
+        <p class="weui_tabbar_label">办公</p>
+    </a>
+    <a href="javascript:;" class="weui_tabbar_item">
+        <div class="weui_tabbar_icon">
+            <i class="iconfont icon-icoinformation"></i>
+        </div>
+        <p class="weui_tabbar_label">资讯</p>
+    </a>
+    <a data-toggle="open-nav" href="javascript:;" class="weui_tabbar_item center-btn">
+        <img src="images/center-btn.png" alt="">
+    </a>
+    <a href="javascript:;" class="weui_tabbar_item">
+        <div class="weui_tabbar_icon">
+            <i class="iconfont icon-icotrends"></i>
+        </div>
+        <p class="weui_tabbar_label">动态</p>
+    </a>
+    <a href="javascript:;" class="weui_tabbar_item">
+        <div class="weui_tabbar_icon">
+            <i class="iconfont icon-icouser"></i>
+        </div>
+        <p class="weui_tabbar_label">我的</p>
+    </a>
+</div>
+
+<div id="nav-wrap" class="nav-wrap">
+    <div class="nav-list">
+        <dl class="nav-item-a">
+            <dt>
+                <a href="###">
+                    <i class="iconfont icon-ico-date"></i>
+                </a>
+            </dt>
+            <dd>记录日志</dd>
+        </dl>
+        <dl class="nav-item-b">
+            <dt>
+                <a href="###">
+                    <i class="iconfont icon-ico-family"></i>
+                </a>
+            </dt>
+            <dd>记录户情</dd>
+        </dl>
+        <dl class="nav-item-c">
+            <dt>
+                <a href="###">
+                    <i class="iconfont icon-ico-state"></i>
+                </a>
+            </dt>
+            <dd>发布状态</dd>
+        </dl>
+    </div>
+    <a href="###" data-toggle="closed-btn" class="closed-btn">
+        <img src="images/closed-btn.png" alt="">
+    </a>
+</div>
+
+<div id="sign-detail" class="fixed-wrap sign-detail-wrap">
+    <div class="sign-detail">
+        <div class="sign-bar ui-border-b">
+            <div class="left">
+                <a href="#" class="link">
+                    <i class="iconfont icon-back"></i>
+                </a>
+            </div>
+            <div class="center">签到详情</div>
+            <div class="right">
+                <a href="#" class="link">
+                    <i class="iconfont icon-more"></i>
+                </a>
+            </div>
+        </div>
+        <div class="sign-detail-body">
+            <div class="sign-a" style="background-image: url(images/sign-img.jpg);"></div>
+            <div class="sign-b">
+                签到一次 <span class="log-tag log-tag-success">在岗</span>
+            </div>
+            <div class="sign-date ui-border-t">
+                <i class="iconfont icon-icon-time"></i>
+                <span>2016年7月5号</span>
+            </div>
+            <div class="sign-location ui-border-t">
+                <i class="iconfont icon-iconlocation"></i>
+                <div class="sign-location-bd">
+                    <strong>邹城市邹城县</strong>
+                    <span>张庄街道24号134户</span>
+                </div>
+            </div>
+            <div class="sign-map">
+                <img src="images/sign-map-img.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/base.min.js"></script>
+<script src="js/plugins/weui.js"></script>
+<script src="js/app.min.js"></script>
+<script>
+    $(function () {
+        $("#inline-calendar").calendar({
+            container: "#inline-calendar",
+            input: "#sign-input",
+            value: ["2016-11-6", "2016-11-5"], //设置签到日期
+            disabledVal: false, //禁用选择
+            //touchMove: false //禁用月份切换
+        });
+        //查看签到详情
+        var $signDetail = $('#sign-detail');
+        $(document).on('click', '.picker-calendar-day.picker-calendar-day-selected', function () {
+            $signDetail.show();
+        });
+        $signDetail.click(function () {
+            $signDetail.hide();
+        });
+        $signDetail.find('.sign-detail').click(function (e) {
+            e.stopPropagation();
+        });
+
+    })
+</script>
+</body>
+</html>

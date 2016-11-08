@@ -1,8 +1,8 @@
 @import "mixins/mixins";
 
 $color-danger: #ff423f;
-$color-success: #82B64A;
-$color-warning: #F9CF4B;
+$color-success: #80d049;
+$color-warning: #fc9b30;
 $color-info: #2f6ae2;
 $color-primary: #00e4c2;
 $color-normal: #3a3a3a;
@@ -61,22 +61,49 @@ img {
 }
 
 .m {
-  margin: $space-sm;
+  margin: $space-sm !important;
 }
 
 .m-tb {
-  margin-top: $space-sm;
-  margin-bottom: $space-sm;
+  margin-top: $space-sm !important;
+  margin-bottom: $space-sm !important;
 }
 
 .m-t {
-  margin-top: $space-sm;
+  margin-top: $space-sm !important;
 }
 
 .m-b {
-  margin-bottom: $space-sm;
+  margin-bottom: $space-sm !important;
 }
-
+.dot{
+  display: inline-block;
+  width: .18rem;
+  height: .18rem;
+  @include border-radius(50%);
+  background-color: $color-lighter;
+  &.dot-danger{
+    background-color: $color-danger;
+  }
+  &.dot-success{
+    background-color: $color-success;
+  }
+  &.dot-warning{
+    background-color: $color-warning;
+  }
+}
+.text-default{
+  color: $color-normal;
+}
+.text-danger{
+  color: $color-danger;
+}
+.text-success{
+  color: $color-success;
+}
+.text-warning{
+  color: $color-warning;
+}
 .container {
   padding-bottom: 1rem;
   height: 100%;
@@ -285,7 +312,7 @@ img {
         @include border-radius(50%);
         @include box-shadow(0 3px 15px rgba(0, 0, 0, 0.1));
         background-color: #ffffff;
-        color: $color-normal;
+        color: $color-light;
         border: 1px solid $color-border;
         i {
           font-size: .5rem;
@@ -496,12 +523,15 @@ img {
 .media-img {
   margin-bottom: $space-sm;
   @include flexbox();
-  @include justify-content(space-between);
+  @include flex-wrap(wrap);
   li {
     width: 1.8rem;
     height: 1.8rem;
     background: center no-repeat;
     @include background-size(cover);
+    & + li {
+      margin-left: $space-xs;
+    }
   }
 }
 
@@ -900,18 +930,30 @@ img {
     padding-bottom: .2rem;
   }
   .sign-btn {
+    position: relative;
     display: inline-block;
+    width: 2.62rem;
+    height: 2.62rem;
+    text-align: center;
     img {
       width: 2.62rem;
       @include box-shadow(0 5px 10px rgba(0, 0, 0, 0.15));
       @include border-radius(50%);
+    }
+    dl {
+      position: absolute;
+      width: 100%;
+      font-size: .6rem;
+      color: $color-danger;
+      line-height: 1;
+      padding-top: .5rem;
     }
   }
 }
 
 .sign-history {
   background-color: #ffffff;
-  margin: 0 $space-sm $space-normal;
+  margin: 0 $space-sm;
   padding: $space-xs;
   @include border-radius(0 0 5px 5px);
   overflow: hidden;
@@ -942,11 +984,6 @@ img {
 }
 
 .sign-calendar {
-  &.no-bar {
-    .toolbar {
-      display: none;
-    }
-  }
   .toolbar, .picker-calendar-week-days, .picker-calendar-row {
     &:after {
       display: none;
@@ -956,5 +993,290 @@ img {
     background-color: transparent;
   }
 }
+
+.picker-calendar-day.picker-calendar-day-selected {
+  span {
+    position: relative;
+    overflow: hidden;
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: $color-danger;
+      content: "\e61d";
+      font-family: "iconfont" !important;
+      font-size: 16px;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-stroke-width: 0.2px;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+}
+
+.sign-log-wrap {
+  position: relative;
+  padding: $space-sm;
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: .9rem;
+    border-left: 1px solid $color-border;
+  }
+}
+
+.sign-log-media {
+  @include flexbox();
+  margin-bottom: $space-sm;
+  .sign-log-hd {
+    float: left;
+    width: .7rem;
+    color: $color-light;
+    line-height: normal;
+    strong {
+      display: block;
+      font-weight: normal;
+      font-size: $fz-normal;
+    }
+    span {
+      font-size: $fz-sm;
+    }
+  }
+  .sign-log-bd {
+    @include flex(1);
+    position: relative;
+    padding-left: $space-sm;
+    color: $color-light;
+    &:before{
+      content: '+';
+      position: absolute;
+      left: -$space-xs;
+      top: $space-xs;
+      width: .24rem;
+      height: .24rem;
+      @include border-radius(50%);
+      @include box-shadow(0 1px 5px rgba(51, 51, 51, 0.3));
+      line-height: 1;
+      text-align: center;
+      font-size: $fz-sm;
+      background-color: #ffffff;
+    }
+    .log-time {
+      font-size: $fz-sm;
+      margin-bottom: $space-xs;
+    }
+    .log-tag {
+      margin-left: $space-xs;
+      top: -.04rem;
+    }
+    .log-location {
+      font-size: $fz-normal;
+    }
+    .log-home {
+      font-size: $fz-sm;
+      color: $color-lighter;
+    }
+  }
+}
+
+.log-img-list {
+  margin-top: $space-xs;
+  margin-bottom: $space-xs;
+  @include flexbox();
+  list-style: none;
+  @include flex-wrap(wrap);
+  li {
+    width: 1.16rem;
+    height: 1.16rem;
+    background: center no-repeat;
+    @include background-size(cover);
+    margin:0 $space-xs $space-xs 0;
+  }
+}
+
+.log-tag {
+  position: relative;
+  font-size: $fz-sm;
+  color: $color-danger;
+  padding: .04rem $space-xs;
+  vertical-align: middle;
+  line-height: 1;
+  display: inline-block;
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200%;
+    height: 200%;
+    @include border-radius(.08rem);
+    border: 1px solid $color-danger;
+    transform-origin: 0 0;
+    transform: scale(0.5);
+  }
+  &.log-tag-success{
+    color: $color-success;
+    &:before{
+      border-color: $color-success;
+    }
+  }
+}
+
+.statistics-info{
+  .weui_cells_title{
+    color: $color-normal;
+  }
+  .dot{
+    margin-right: $space-sm;
+  }
+  .weui_cell_primary{
+    font-size: $fz-sm;
+  }
+  .weui_cell_ft{
+    font-size: $fz-sm;
+    strong{
+      font-weight: normal;
+      font-size: $fz-big;
+    }
+  }
+}
+
+.fixed-wrap{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  //@include opacity(0);
+  z-index: 600;
+  @include transition(all .2s);
+}
+.sign-detail-wrap{
+  display: none;
+  padding:1.9rem .4rem 0;
+}
+.sign-detail{
+  @include border-radius(.1rem);
+  background-color: #ffffff;
+}
+.sign-bar{
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(space-between);
+  height: .8rem;
+  .left, .right {
+    @include flex-shrink(0);
+    @include flexbox();
+    height: 100%;
+    line-height:.8rem;
+    .link {
+      padding:0 $space-sm;
+      color: $color-normal;
+      font-size: $fz-normal;
+      i {
+        font-size: $fz-big;
+      }
+    }
+  }
+}
+.sign-a{
+  margin: $space-sm;
+  height: 2.8rem;
+  background-position: center;
+  @include background-size(cover);
+}
+.sign-b{
+  padding:.15rem $space-sm;
+  font-size: $fz-sm;
+  text-align: center;
+  .log-tag {
+    margin-left: $space-xs;
+    top: -.04rem;
+  }
+}
+.sign-date{
+  padding:.10rem $space-sm;
+  font-size: $fz-sm;
+  i{
+    margin-right: $space-xs;
+    color: $color-lighter;
+    vertical-align: middle;
+    font-size: .3rem;
+  }
+}
+.sign-location{
+  padding:.10rem $space-sm;
+  font-size: $fz-sm;
+  i{
+    margin-right: $space-xs;
+    float: left;
+    color: $color-lighter;
+    vertical-align: middle;
+    font-size: .3rem;
+  }
+  .sign-location-bd{
+    overflow: hidden;
+    strong{
+      display: block;
+    }
+    span{
+      color: $color-lighter;
+    }
+  }
+}
+.sign-map{
+  padding:0 $space-sm $space-sm;
+  img{
+    width: 100%;
+  }
+}
+
+.enter-wrap{
+  .sign-date,.sign-location{
+    background-color: #ffffff;
+  }
+}
+.enter-img{
+  img{
+    vertical-align: top;
+  }
+}
+.sign-map-wrap{
+  height: 8rem;
+}
+.fixed-enter-sign{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 600;
+  background-color: #f7f7f7;
+  padding:.3rem .8rem;
+  .button{
+    display: block;
+    width: 100%;
+    background-color: $color-danger;
+    color: #ffffff;
+    font-size: $fz-normal;
+    text-align: center;
+    padding: $space-sm;
+    @include border-radius(.42rem);
+    @include box-shadow(0 5px 10px rgba(255, 66, 63, 0.32));
+  }
+}
+
+
+
+
+
+
+
+
+
 
 

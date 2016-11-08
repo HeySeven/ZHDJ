@@ -163,17 +163,44 @@ img {
   overflow: hidden; }
 
 .m {
-  margin: 0.2rem; }
+  margin: 0.2rem !important; }
 
 .m-tb {
-  margin-top: 0.2rem;
-  margin-bottom: 0.2rem; }
+  margin-top: 0.2rem !important;
+  margin-bottom: 0.2rem !important; }
 
 .m-t {
-  margin-top: 0.2rem; }
+  margin-top: 0.2rem !important; }
 
 .m-b {
-  margin-bottom: 0.2rem; }
+  margin-bottom: 0.2rem !important; }
+
+.dot {
+  display: inline-block;
+  width: .18rem;
+  height: .18rem;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #939393; }
+  .dot.dot-danger {
+    background-color: #ff423f; }
+  .dot.dot-success {
+    background-color: #80d049; }
+  .dot.dot-warning {
+    background-color: #fc9b30; }
+
+.text-default {
+  color: #3a3a3a; }
+
+.text-danger {
+  color: #ff423f; }
+
+.text-success {
+  color: #80d049; }
+
+.text-warning {
+  color: #fc9b30; }
 
 .container {
   padding-bottom: 1rem;
@@ -388,7 +415,7 @@ img {
         -moz-box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
         box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
         background-color: #ffffff;
-        color: #3a3a3a;
+        color: #545454;
         border: 1px solid #e5e5e5; }
         .nav-list dl dt a i {
           font-size: .5rem; }
@@ -582,11 +609,10 @@ img {
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  -webkit-justify-content: space-between;
-  -moz-justify-content: space-between;
-  justify-content: space-between; }
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
   .media-img li {
     width: 1.8rem;
     height: 1.8rem;
@@ -595,6 +621,8 @@ img {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover; }
+    .media-img li + li {
+      margin-left: 0.1rem; }
 
 .media-footer {
   height: .66rem;
@@ -1125,7 +1153,11 @@ img {
     font-size: 0.28rem;
     padding-bottom: .2rem; }
   .sign-panel .sign-btn {
-    display: inline-block; }
+    position: relative;
+    display: inline-block;
+    width: 2.62rem;
+    height: 2.62rem;
+    text-align: center; }
     .sign-panel .sign-btn img {
       width: 2.62rem;
       -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
@@ -1134,10 +1166,17 @@ img {
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
       border-radius: 50%; }
+    .sign-panel .sign-btn dl {
+      position: absolute;
+      width: 100%;
+      font-size: .6rem;
+      color: #ff423f;
+      line-height: 1;
+      padding-top: .5rem; }
 
 .sign-history {
   background-color: #ffffff;
-  margin: 0 0.2rem 0.3rem;
+  margin: 0 0.2rem;
   padding: 0.1rem;
   -webkit-border-radius: 0 0 5px 5px;
   -moz-border-radius: 0 0 5px 5px;
@@ -1167,11 +1206,295 @@ img {
 .weui-picker-calendar .toolbar {
   margin-bottom: 0; }
 
-.sign-calendar.no-bar .toolbar {
-  display: none; }
 .sign-calendar .toolbar:after, .sign-calendar .picker-calendar-week-days:after, .sign-calendar .picker-calendar-row:after {
   display: none; }
 .sign-calendar .picker-calendar-week-days {
   background-color: transparent; }
+
+.picker-calendar-day.picker-calendar-day-selected span {
+  position: relative;
+  overflow: hidden; }
+  .picker-calendar-day.picker-calendar-day-selected span:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #ff423f;
+    content: "\e61d";
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale; }
+
+.sign-log-wrap {
+  position: relative;
+  padding: 0.2rem; }
+  .sign-log-wrap:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: .9rem;
+    border-left: 1px solid #e5e5e5; }
+
+.sign-log-media {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 0.2rem; }
+  .sign-log-media .sign-log-hd {
+    float: left;
+    width: .7rem;
+    color: #545454;
+    line-height: normal; }
+    .sign-log-media .sign-log-hd strong {
+      display: block;
+      font-weight: normal;
+      font-size: 0.28rem; }
+    .sign-log-media .sign-log-hd span {
+      font-size: 0.24rem; }
+  .sign-log-media .sign-log-bd {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    position: relative;
+    padding-left: 0.2rem;
+    color: #545454; }
+    .sign-log-media .sign-log-bd:before {
+      content: '+';
+      position: absolute;
+      left: -0.1rem;
+      top: 0.1rem;
+      width: .24rem;
+      height: .24rem;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      -webkit-box-shadow: 0 1px 5px rgba(51, 51, 51, 0.3);
+      -moz-box-shadow: 0 1px 5px rgba(51, 51, 51, 0.3);
+      box-shadow: 0 1px 5px rgba(51, 51, 51, 0.3);
+      line-height: 1;
+      text-align: center;
+      font-size: 0.24rem;
+      background-color: #ffffff; }
+    .sign-log-media .sign-log-bd .log-time {
+      font-size: 0.24rem;
+      margin-bottom: 0.1rem; }
+    .sign-log-media .sign-log-bd .log-tag {
+      margin-left: 0.1rem;
+      top: -.04rem; }
+    .sign-log-media .sign-log-bd .log-location {
+      font-size: 0.28rem; }
+    .sign-log-media .sign-log-bd .log-home {
+      font-size: 0.24rem;
+      color: #939393; }
+
+.log-img-list {
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .log-img-list li {
+    width: 1.16rem;
+    height: 1.16rem;
+    background: center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0 0.1rem 0.1rem 0; }
+
+.log-tag {
+  position: relative;
+  font-size: 0.24rem;
+  color: #ff423f;
+  padding: 0.04rem 0.1rem;
+  vertical-align: middle;
+  line-height: 1;
+  display: inline-block; }
+  .log-tag:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200%;
+    height: 200%;
+    -webkit-border-radius: 0.08rem;
+    -moz-border-radius: 0.08rem;
+    border-radius: 0.08rem;
+    border: 1px solid #ff423f;
+    transform-origin: 0 0;
+    transform: scale(0.5); }
+  .log-tag.log-tag-success {
+    color: #80d049; }
+    .log-tag.log-tag-success:before {
+      border-color: #80d049; }
+
+.statistics-info .weui_cells_title {
+  color: #3a3a3a; }
+.statistics-info .dot {
+  margin-right: 0.2rem; }
+.statistics-info .weui_cell_primary {
+  font-size: 0.24rem; }
+.statistics-info .weui_cell_ft {
+  font-size: 0.24rem; }
+  .statistics-info .weui_cell_ft strong {
+    font-weight: normal;
+    font-size: 0.32rem; }
+
+.fixed-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 600;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s; }
+
+.sign-detail-wrap {
+  display: none;
+  padding: 1.9rem .4rem 0; }
+
+.sign-detail {
+  -webkit-border-radius: 0.1rem;
+  -moz-border-radius: 0.1rem;
+  border-radius: 0.1rem;
+  background-color: #ffffff; }
+
+.sign-bar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+  height: .8rem; }
+  .sign-bar .left, .sign-bar .right {
+    -webkit-flex-shrink: 0;
+    -moz-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100%;
+    line-height: .8rem; }
+    .sign-bar .left .link, .sign-bar .right .link {
+      padding: 0 0.2rem;
+      color: #3a3a3a;
+      font-size: 0.28rem; }
+      .sign-bar .left .link i, .sign-bar .right .link i {
+        font-size: 0.32rem; }
+
+.sign-a {
+  margin: 0.2rem;
+  height: 2.8rem;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.sign-b {
+  padding: 0.15rem 0.2rem;
+  font-size: 0.24rem;
+  text-align: center; }
+  .sign-b .log-tag {
+    margin-left: 0.1rem;
+    top: -.04rem; }
+
+.sign-date {
+  padding: 0.1rem 0.2rem;
+  font-size: 0.24rem; }
+  .sign-date i {
+    margin-right: 0.1rem;
+    color: #939393;
+    vertical-align: middle;
+    font-size: .3rem; }
+
+.sign-location {
+  padding: 0.1rem 0.2rem;
+  font-size: 0.24rem; }
+  .sign-location i {
+    margin-right: 0.1rem;
+    float: left;
+    color: #939393;
+    vertical-align: middle;
+    font-size: .3rem; }
+  .sign-location .sign-location-bd {
+    overflow: hidden; }
+    .sign-location .sign-location-bd strong {
+      display: block; }
+    .sign-location .sign-location-bd span {
+      color: #939393; }
+
+.sign-map {
+  padding: 0 0.2rem 0.2rem; }
+  .sign-map img {
+    width: 100%; }
+
+.enter-wrap .sign-date, .enter-wrap .sign-location {
+  background-color: #ffffff; }
+
+.enter-img img {
+  vertical-align: top; }
+
+.sign-map-wrap {
+  height: 8rem; }
+
+.fixed-enter-sign {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 600;
+  background-color: #f7f7f7;
+  padding: .3rem .8rem; }
+  .fixed-enter-sign .button {
+    display: block;
+    width: 100%;
+    background-color: #ff423f;
+    color: #ffffff;
+    font-size: 0.28rem;
+    text-align: center;
+    padding: 0.2rem;
+    -webkit-border-radius: 0.42rem;
+    -moz-border-radius: 0.42rem;
+    border-radius: 0.42rem;
+    -webkit-box-shadow: 0 5px 10px rgba(255, 66, 63, 0.32);
+    -moz-box-shadow: 0 5px 10px rgba(255, 66, 63, 0.32);
+    box-shadow: 0 5px 10px rgba(255, 66, 63, 0.32); }
 
 /*# sourceMappingURL=app.css.map */
