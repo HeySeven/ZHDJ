@@ -76,34 +76,40 @@ img {
 .m-b {
   margin-bottom: $space-sm !important;
 }
-.dot{
+
+.dot {
   display: inline-block;
   width: .18rem;
   height: .18rem;
   @include border-radius(50%);
   background-color: $color-lighter;
-  &.dot-danger{
+  &.dot-danger {
     background-color: $color-danger;
   }
-  &.dot-success{
+  &.dot-success {
     background-color: $color-success;
   }
-  &.dot-warning{
+  &.dot-warning {
     background-color: $color-warning;
   }
 }
-.text-default{
+
+.text-default {
   color: $color-normal;
 }
-.text-danger{
+
+.text-danger {
   color: $color-danger;
 }
-.text-success{
+
+.text-success {
   color: $color-success;
 }
-.text-warning{
+
+.text-warning {
   color: $color-warning;
 }
+
 .container {
   padding-bottom: 1rem;
   height: 100%;
@@ -819,11 +825,7 @@ img {
 }
 
 .publish-upload {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  padding: $space-sm;
+  margin-top: $space-sm;
   text-align: right;
   .weui_uploader_hd {
     display: none;
@@ -832,8 +834,12 @@ img {
     display: none;
   }
   .upload-btn {
+    position: fixed;
+    bottom: $space-sm;
+    right: $space-sm;
     font-size: .5rem;
     color: $color-danger;
+    line-height: 1;
   }
   .weui_uploader_file {
     position: relative;
@@ -1019,7 +1025,7 @@ img {
 .sign-log-wrap {
   position: relative;
   padding: $space-sm;
-  &:before{
+  &:before {
     content: '';
     position: absolute;
     top: 0;
@@ -1051,7 +1057,7 @@ img {
     position: relative;
     padding-left: $space-sm;
     color: $color-light;
-    &:before{
+    &:before {
       content: '+';
       position: absolute;
       left: -$space-xs;
@@ -1094,7 +1100,7 @@ img {
     height: 1.16rem;
     background: center no-repeat;
     @include background-size(cover);
-    margin:0 $space-xs $space-xs 0;
+    margin: 0 $space-xs $space-xs 0;
   }
 }
 
@@ -1118,34 +1124,34 @@ img {
     transform-origin: 0 0;
     transform: scale(0.5);
   }
-  &.log-tag-success{
+  &.log-tag-success {
     color: $color-success;
-    &:before{
+    &:before {
       border-color: $color-success;
     }
   }
 }
 
-.statistics-info{
-  .weui_cells_title{
+.statistics-info {
+  .weui_cells_title {
     color: $color-normal;
   }
-  .dot{
+  .dot {
     margin-right: $space-sm;
   }
-  .weui_cell_primary{
+  .weui_cell_primary {
     font-size: $fz-sm;
   }
-  .weui_cell_ft{
+  .weui_cell_ft {
     font-size: $fz-sm;
-    strong{
+    strong {
       font-weight: normal;
       font-size: $fz-big;
     }
   }
 }
 
-.fixed-wrap{
+.fixed-wrap {
   position: fixed;
   top: 0;
   right: 0;
@@ -1156,15 +1162,18 @@ img {
   z-index: 600;
   @include transition(all .2s);
 }
-.sign-detail-wrap{
+
+.sign-detail-wrap {
   display: none;
-  padding:1.9rem .4rem 0;
+  padding: 1.9rem .4rem 0;
 }
-.sign-detail{
+
+.sign-detail {
   @include border-radius(.1rem);
   background-color: #ffffff;
 }
-.sign-bar{
+
+.sign-bar {
   @include flexbox();
   @include align-items(center);
   @include justify-content(space-between);
@@ -1173,9 +1182,9 @@ img {
     @include flex-shrink(0);
     @include flexbox();
     height: 100%;
-    line-height:.8rem;
+    line-height: .8rem;
     .link {
-      padding:0 $space-sm;
+      padding: 0 $space-sm;
       color: $color-normal;
       font-size: $fz-normal;
       i {
@@ -1184,14 +1193,16 @@ img {
     }
   }
 }
-.sign-a{
+
+.sign-a {
   margin: $space-sm;
   height: 2.8rem;
   background-position: center;
   @include background-size(cover);
 }
-.sign-b{
-  padding:.15rem $space-sm;
+
+.sign-b {
+  padding: .15rem $space-sm;
   font-size: $fz-sm;
   text-align: center;
   .log-tag {
@@ -1199,65 +1210,71 @@ img {
     top: -.04rem;
   }
 }
-.sign-date{
-  padding:.10rem $space-sm;
+
+.sign-date {
+  padding: .10rem $space-sm;
   font-size: $fz-sm;
-  i{
+  i {
     margin-right: $space-xs;
     color: $color-lighter;
     vertical-align: middle;
     font-size: .3rem;
   }
 }
-.sign-location{
-  padding:.10rem $space-sm;
+
+.sign-location {
+  padding: .10rem $space-sm;
   font-size: $fz-sm;
-  i{
+  i {
     margin-right: $space-xs;
     float: left;
     color: $color-lighter;
     vertical-align: middle;
-    font-size: .3rem;
+    font-size: .32rem;
   }
-  .sign-location-bd{
+  .sign-location-bd {
     overflow: hidden;
-    strong{
+    strong {
       display: block;
     }
-    span{
+    span {
       color: $color-lighter;
     }
   }
 }
-.sign-map{
-  padding:0 $space-sm $space-sm;
-  img{
+
+.sign-map {
+  padding: 0 $space-sm $space-sm;
+  img {
     width: 100%;
   }
 }
 
-.enter-wrap{
-  .sign-date,.sign-location{
+.enter-wrap {
+  .sign-date, .sign-location {
     background-color: #ffffff;
   }
 }
-.enter-img{
-  img{
+
+.enter-img {
+  img {
     vertical-align: top;
   }
 }
-.sign-map-wrap{
+
+.sign-map-wrap {
   height: 8rem;
 }
-.fixed-enter-sign{
+
+.fixed-enter-sign {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 600;
   background-color: #f7f7f7;
-  padding:.3rem .8rem;
-  .button{
+  padding: .3rem .8rem;
+  .button {
     display: block;
     width: 100%;
     background-color: $color-danger;
@@ -1269,6 +1286,137 @@ img {
     @include box-shadow(0 5px 10px rgba(255, 66, 63, 0.32));
   }
 }
+
+.weui-picker-calendar {
+  padding: .6rem .2rem;
+  background: rgba(0, 0, 0, 0.7);
+  .toolbar, .picker-calendar-week-days, .picker-calendar-row {
+    &:after {
+      display: none;
+    }
+  }
+  .picker-calendar-week-days {
+    & + .picker-calendar-months {
+      background-color: #ffffff;
+    }
+  }
+}
+
+.diary-wrap {
+
+}
+
+.icon-cell {
+  .weui_cell_hd {
+    .dot {
+      margin-right: .3rem;
+    }
+    .weui_label {
+      width: auto;
+    }
+  }
+  i {
+    color: $color-lighter;
+    margin-right: .15rem;
+    font-size: .32rem;
+  }
+}
+
+.diary-choice {
+  background-color: #ffffff;
+  @include flexbox();
+  @include align-items(center);
+  text-align: center;
+  padding: $space-sm;
+  .choice-link {
+    @include flex(1);
+    color: $color-lighter;
+    line-height: 1;
+    i {
+      font-size: .32rem;
+    }
+    span {
+      display: block;
+      padding-top: $space-xs;
+      font-size: $fz-sm;
+    }
+  }
+}
+.diary-location{
+  background-color: #ffffff;
+  padding: $space-sm 0;
+}
+.audio-btn {
+  position: fixed;
+  bottom: $space-sm;
+  left: 50%;
+  margin-left: -.41rem;
+  width: .82rem;
+  height: .82rem;
+  line-height: .82rem;
+  text-align: center;
+  background-color: #fffbfb;
+  @include border-radius(50%);
+  @include box-shadow(0 2px 15px rgba(255, 66, 63, 0.4));
+  i {
+    font-size: $fz-big;
+    color: $color-danger;
+  }
+}
+
+.transcribe {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: $color-danger;
+  z-index: 600;
+  @include transition(all .2s);
+  .transcribe-content{
+    text-align: center;
+    padding: 1.9rem $space-normal $space-sm;
+    font-size: $fz-big;
+    color: #ffffff;
+  }
+  .transcribe-btn {
+    position: fixed;
+    bottom: -.3rem;
+    left: 50%;
+    margin-left: -.74rem;
+    display: inline-block;
+    text-align: center;
+    width: 1.48rem;
+    height: 1.48rem;
+    line-height: 1.48rem;
+    @include border-radius(50%);
+    background-color: #fff;
+    @include box-shadow((0 0 0px 7px rgba(255, 255, 255, 0.37), 0 0 0px 15px rgba(255, 255, 255, 0.1)));
+    &.playing {
+      @include animation(playing 2s ease-out infinite);
+    }
+    i {
+      color: $color-danger;
+      font-size: .7rem;
+    }
+  }
+}
+
+@keyframes playing {
+  0% {
+    @include box-shadow(none);
+  }
+  60% {
+    @include box-shadow((0 0 0px 7px rgba(255, 255, 255, 0.37), 0 0 0px 15px rgba(255, 255, 255, 0.1)));
+  }
+  100% {
+    @include box-shadow(none);
+  }
+}
+
+
+
 
 
 
