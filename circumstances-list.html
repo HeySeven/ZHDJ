@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
-    <title>首页</title>
+    <title>户情列表</title>
     <link rel="stylesheet" href="css/weui/weui.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_a9bdi2s42c5wmi.css">
     <link rel="stylesheet" href="css/jquery-weui/jquery-weui.css">
@@ -13,38 +13,26 @@
 </head>
 <body>
 <div class="container">
-    <div class="index-wrap">
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="images/index-banner.jpg" alt="">
-                    <div class="slide-disc">文组织总部发表演讲</div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/index-banner.jpg" alt="">
-                    <div class="slide-disc">文组织总部发表演讲</div>
-                </div>
+    <div class="weui_search_bar dj-search dj-search-success" id="search_bar">
+        <form class="weui_search_outer">
+            <div class="weui_search_inner">
+                <i class="weui_icon_search"></i>
+                <input type="search" class="weui_search_input" id="search_input" placeholder="搜索" required/>
+                <a href="javascript:" class="weui_icon_clear" id="search_clear"></a>
             </div>
-            <div class="swiper-pagination"></div>
-        </div>
+            <label for="search_input" class="weui_search_text" id="search_text">
+                <i class="weui_icon_search"></i>
+                <span>搜索</span>
+            </label>
+        </form>
+        <a href="javascript:" class="weui_search_cancel" id="search_cancel">取消</a>
     </div>
-    <div class="index-menu-wrap">
-        <a href="###" class="menu-item">
-            <img src="images/index-menu-a.png" alt="">
-            <span>考勤记录</span>
-        </a>
-        <a href="###" class="menu-item">
-            <img src="images/index-menu-b.png" alt="">
-            <span>书记日记</span>
-        </a>
-        <a href="###" class="menu-item">
-            <img src="images/index-menu-c.png" alt="">
-            <span>周边户情</span>
-        </a>
-        <a href="###" class="menu-item">
-            <img src="images/index-menu-d.png" alt="">
-            <span>政绩排行</span>
-        </a>
+    <div class="circums-no-msg">
+        <a href="###"><img src="images/circums-no-msg.png" alt=""></a>
+        <dl>
+            <dt>点击创建新户情</dt>
+            <dd>无相关户情信息</dd>
+        </dl>
     </div>
 </div>
 <div class="weui_tabbar fixed-nav-bar">
@@ -108,8 +96,11 @@
         <img src="images/closed-btn.png" alt="">
     </a>
 </div>
+
 <script src="js/base.min.js"></script>
-<script src="js/plugins/swiper.min.js"></script>
+<script src="js/plugins/weui.js"></script>
 <script src="js/app.min.js"></script>
+
+
 </body>
 </html>

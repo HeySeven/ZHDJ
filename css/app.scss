@@ -117,6 +117,15 @@ img {
   -webkit-overflow-scrolling: touch;
 }
 
+.weui-popup-overlay, .weui-popup-container {
+  z-index: 600;
+}
+
+.weui-popup-modal {
+  z-index: 600;
+  background-color: #f8f9f9;
+}
+
 .swiper-slide {
   img {
     display: block;
@@ -441,7 +450,9 @@ img {
             margin-left: $space-xs;
           }
         }
-
+        .more-control {
+          float: right;
+        }
       }
     }
   }
@@ -1342,10 +1353,12 @@ img {
     }
   }
 }
-.diary-location{
+
+.diary-location {
   background-color: #ffffff;
   padding: $space-sm 0;
 }
+
 .audio-btn {
   position: fixed;
   bottom: $space-sm;
@@ -1374,7 +1387,7 @@ img {
   background-color: $color-danger;
   z-index: 600;
   @include transition(all .2s);
-  .transcribe-content{
+  .transcribe-content {
     text-align: center;
     padding: 1.9rem $space-normal $space-sm;
     font-size: $fz-big;
@@ -1415,13 +1428,79 @@ img {
   }
 }
 
+.dj-search {
+  &.dj-search-success {
+    background-color: $color-danger;
+    .weui_search_cancel {
+      color: #ffffff;
+    }
+  }
+  .weui_search_outer, .weui_search_bar {
+    background-color: transparent;
+    &:after {
+      @include border-radius(.6rem);
+    }
+    .weui_icon_search {
+      top: 0;
+    }
+  }
+  .weui_search_cancel {
+    color: $color-danger;
+  }
+  .weui_search_text {
+    @include border-radius(.26rem);
+  }
+}
 
+.circums-no-msg {
+  padding: .9rem $space-normal;
+  text-align: center;
+  img {
+    width: 1.36rem;
+  }
+  dl {
+    padding-top: $space-sm;
+    dt {
+      font-size: $fz-big;
+    }
+    dd {
+      font-size: $space-sm;
+      color: $color-lighter;
+    }
+  }
+}
 
-
-
-
-
-
+.search-tag-wrap{
+  padding: $space-normal;
+  .search-tag-panel{
+    margin-bottom: $space-sm;
+  }
+}
+.tag-panel-header{
+  padding: $space-xs 0;
+  font-size: .28rem;
+  font-weight: bold;
+}
+.tag-btn{
+  display: inline-block;
+  font-size: $fz-sm;
+  color: $color-light;
+  border: 1px solid #939393;
+  padding: .06rem $space-sm;
+  @include border-radius(2px);
+  margin-bottom: $space-xs;
+  margin-right: $space-xs;
+  &.tag-danger{
+    background-color: $color-danger;
+    border-color: $color-danger;
+    color: #ffffff;
+  }
+  &.tag-warning{
+    background-color: $color-warning;
+    border-color: $color-warning;
+    color: #ffffff;
+  }
+}
 
 
 
