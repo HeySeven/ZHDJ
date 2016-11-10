@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>日记详情</title>
+    <link rel="stylesheet" href="css/weui/weui.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2r8lb0nq09xdpldi.css">
+    <link rel="stylesheet" href="css/jquery-weui/jquery-weui.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="navbar navbar-purple">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="link">
+                <i class="iconfont icon-back"></i>
+            </a>
+        </div>
+        <div class="center">日记详情</div>
+        <div class="right">
+
+        </div>
+    </div>
+</div>
+<div class="container p-b-normal">
+    <div class="sign-voice-box">
+        <div class="sign-voice-hd">
+            邹城市第一书记
+        </div>
+        <div class="sign-voice-bd">
+            <a data-toggle="voice-play-btn" href="###" class="voice-play-btn">
+                <i class="iconfont icon-fankui"></i>
+            </a>
+        </div>
+    </div>
+    <div class="diary-wrap">
+        <div class="diary-detail-header">
+            <h1>邹城县香城镇留守儿童入学问题邹城县香城镇留守儿童入学问题</h1>
+            <a href="###" class="diary-detail-control"><i class="iconfont icon-shenglve"></i></a>
+        </div>
+        <div class="weui_cells weui_cells_form">
+            <div class="weui_cell icon-cell">
+                <div class="weui_cell_hd"><i class="iconfont icon-shijian"></i></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    2016年10月17日 周六
+                </div>
+            </div>
+            <div class="weui_cell icon-cell">
+                <div class="weui_cell_hd"><i class="iconfont icon-icon-tag"></i></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    留守儿童
+                </div>
+            </div>
+        </div>
+        <div class="diary-location">
+            <div class="sign-location">
+                <i class="iconfont icon-iconlocation"></i>
+                <div class="sign-location-bd">
+                    <strong>邹城市邹城县</strong>
+                    <span>张庄街道24号134户</span>
+                </div>
+            </div>
+            <div class="sign-map">
+                <img src="images/sign-map-img.jpg" alt="">
+            </div>
+        </div>
+        <div class="weui_cells weui_cells_access m-t">
+            <a class="weui_cell icon-cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p><i class="iconfont icon-iconlink"></i> 已绑定户情</p>
+                </div>
+                <div class="weui_cell_ft">张三</div>
+            </a>
+        </div>
+    </div>
+    <div class="comment-wrap ui-border-t">
+        <div class="weui_panel comment-panel">
+            <div class="weui_panel_hd">日记详情</div>
+            <div class="diary-detail-wrap">
+                <div class="detail-body">
+                    <p>
+                        学校成立了“留守儿童之家”领导小组，校长担任组长，教导主任担任副组长，成员为各班主任和课任教师，学校设立了一间40平方米留守儿童之家活动室，统一配备了电视、亲情电话、课桌凳、书橱、图书及各种文娱器材，制定了“留守儿童之家”各项制度，建立了留守儿童档案。 </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<script src="js/base.min.js"></script>
+<script src="js/app.min.js"></script>
+<script>
+    $(function(){
+       $('[data-toggle="voice-play-btn"]').click(function(){
+           $.actions({
+               actions: [{
+                   text: "修改",
+                   onClick: function() {
+                       //do something
+                   }
+               },{
+                   text: "删除",
+                   onClick: function() {
+                       //do something
+                   }
+               },{
+                   text: "办理",
+                   onClick: function() {
+                       //do something
+                   }
+               }]
+           });
+       })
+    });
+</script>
+</body>
+</html>
