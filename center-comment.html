@@ -7,9 +7,14 @@
     <meta name="renderer" content="webkit">
     <title>我的评论</title>
     <link rel="stylesheet" href="css/weui/weui.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_2r8lb0nq09xdpldi.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_jkqmy9ugnbsurf6r.css">
     <link rel="stylesheet" href="css/jquery-weui/jquery-weui.css">
     <link rel="stylesheet" href="css/app.css">
+    <style>
+        .ui-loader{
+            display: none;
+        }
+    </style>
 </head>
 <body>
 <div class="navbar ui-border-b">
@@ -26,7 +31,7 @@
 </div>
 <div class="container">
     <div class="trends-wrap">
-        <div id="list" class="trends-list">
+        <div class="trends-list">
             <div class="trends-media">
                 <a class="media-link media-row" href="###">
                     <div class="trends-body">
@@ -82,16 +87,13 @@
                 </div>
             </div>
         </div>
-        <div class="weui-infinite-scroll">
-            <div class="infinite-preloader"></div>
-            正在加载...
-        </div>
+
     </div>
 
 
 </div>
 <div class="weui_tabbar fixed-nav-bar">
-    <a href="javascript:;" class="weui_tabbar_item weui_bar_item_on">
+    <a href="javascript:;" class="weui_tabbar_item">
         <div class="weui_tabbar_icon">
             <i class="iconfont icon-icobusiness"></i>
         </div>
@@ -112,7 +114,7 @@
         </div>
         <p class="weui_tabbar_label">动态</p>
     </a>
-    <a href="javascript:;" class="weui_tabbar_item">
+    <a href="javascript:;" class="weui_tabbar_item weui_bar_item_on">
         <div class="weui_tabbar_icon">
             <i class="iconfont icon-icouser"></i>
         </div>

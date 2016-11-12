@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>排行榜</title>
+    <link rel="stylesheet" href="css/weui/weui.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_jkqmy9ugnbsurf6r.css">
+    <link rel="stylesheet" href="css/jquery-weui/jquery-weui.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="navbar navbar-danger navbar-shadow">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="link">
+                <i class="iconfont icon-back"></i>
+            </a>
+        </div>
+        <div class="center">排行榜</div>
+        <div class="right">
+        </div>
+    </div>
+</div>
+<div class="weui_tab sub-nav">
+    <div class="navbar-bar">
+        <div class="weui_navbar">
+            <a href='#tab1' class="weui_navbar_item weui_bar_item_on">
+                工作进度
+            </a>
+            <a href='#tab2' class="weui_navbar_item">
+                报告数量
+            </a>
+            <a href='#tab3' class="weui_navbar_item">
+                累计签到
+            </a>
+        </div>
+    </div>
+
+    <div class="weui_tab_bd">
+        <div id="tab1" class="weui_tab_bd_item weui_tab_bd_item_active">
+            <div class="ranks-wrap">
+                <ol class="ranks-list">
+                    <li>
+                        <span class="cunt">1.</span>
+                        <div class="ranks-hd">
+                            <h6>邹城市第一书记</h6>
+                            <div class="ranks-progress">
+                                <div class="weui_progress">
+                                    <div class="weui_progress_bar">
+                                        <div class="weui_progress_inner_bar js_progress" style="width: 50%;"></div>
+                                    </div>
+                                </div>
+                                <div class="dis-progress">
+                                    <span class="pull-right">50%</span>
+                                    完成进度
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ranks-bd">
+                            <img src="images/cup-1.png" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="cunt">2.</span>
+                        <div class="ranks-hd">
+                            <h6>邹城市第一书记</h6>
+                            <div class="ranks-progress">
+                                <div class="weui_progress">
+                                    <div class="weui_progress_bar">
+                                        <div class="weui_progress_inner_bar js_progress" style="width: 50%;"></div>
+                                    </div>
+                                </div>
+                                <div class="dis-progress">
+                                    <span class="pull-right">50%</span>
+                                    完成进度
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ranks-bd">
+                            <img src="images/cup-2.png" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="cunt">3.</span>
+                        <div class="ranks-hd">
+                            <h6>邹城市第一书记</h6>
+                            <div class="ranks-progress">
+                                <div class="weui_progress">
+                                    <div class="weui_progress_bar">
+                                        <div class="weui_progress_inner_bar js_progress" style="width: 50%;"></div>
+                                    </div>
+                                </div>
+                                <div class="dis-progress">
+                                    <span class="pull-right">50%</span>
+                                    完成进度
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ranks-bd">
+                            <img src="images/cup-3.png" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="cunt">4.</span>
+                        <div class="ranks-hd">
+                            <h6>邹城市第一书记</h6>
+                            <div class="ranks-progress">
+                                <div class="weui_progress">
+                                    <div class="weui_progress_bar">
+                                        <div class="weui_progress_inner_bar js_progress" style="width: 50%;"></div>
+                                    </div>
+                                </div>
+                                <div class="dis-progress">
+                                    <span class="pull-right">50%</span>
+                                    完成进度
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="cunt">5.</span>
+                        <div class="ranks-hd">
+                            <h6>邹城市第一书记</h6>
+                            <div class="ranks-progress">
+                                <div class="weui_progress">
+                                    <div class="weui_progress_bar">
+                                        <div class="weui_progress_inner_bar js_progress" style="width: 50%;"></div>
+                                    </div>
+                                </div>
+                                <div class="dis-progress">
+                                    <span class="pull-right">50%</span>
+                                    完成进度
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div id="tab2" class="weui_tab_bd_item">
+            <div class="ranks-wrap">
+                <ol class="ranks-list">
+                    <li>
+                        <span class="cunt">1.</span>
+                        <div class="ranks-hd">
+                            <h6>邹城市第一书记</h6>
+                            <div class="ranks-progress">
+                                <div class="dis-progress">
+                                    报告总数 <span class="text-danger">5427</span>份
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ranks-bd">
+                            <img src="images/cup-1.png" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="cunt">2.</span>
+                        <div class="ranks-hd">
+                            <h6>邹城市第一书记</h6>
+                            <div class="ranks-progress">
+                                <div class="dis-progress">
+                                    报告总数 <span class="text-danger">5427</span>份
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ranks-bd">
+                            <img src="images/cup-2.png" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="cunt">3.</span>
+                        <div class="ranks-hd">
+                            <h6>邹城市第一书记</h6>
+                            <div class="ranks-progress">
+                                <div class="dis-progress">
+                                    报告总数 <span class="text-danger">5427</span>份
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ranks-bd">
+                            <img src="images/cup-3.png" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="cunt">4.</span>
+                        <div class="ranks-hd">
+                            <h6>邹城市第一书记</h6>
+                            <div class="ranks-progress">
+                                <div class="dis-progress">
+                                    报告总数 <span class="text-danger">5427</span>份
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div id="tab3" class="weui_tab_bd_item">
+            <div class="ranks-wrap">
+                <ol class="ranks-list">
+                    <li>
+                        <span class="cunt">1.</span>
+                        <div class="ranks-hd">
+                            <h6>邹城市第一书记</h6>
+                            <div class="ranks-progress">
+                                <div class="dis-progress">
+                                    报告总数 <span class="text-warning">5427</span>份
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ranks-bd">
+                            <img src="images/cup-1.png" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="cunt">2.</span>
+                        <div class="ranks-hd">
+                            <h6>邹城市第一书记</h6>
+                            <div class="ranks-progress">
+                                <div class="dis-progress">
+                                    报告总数 <span class="text-warning">5427</span>份
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ranks-bd">
+                            <img src="images/cup-2.png" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="cunt">3.</span>
+                        <div class="ranks-hd">
+                            <h6>邹城市第一书记</h6>
+                            <div class="ranks-progress">
+                                <div class="dis-progress">
+                                    报告总数 <span class="text-warning">5427</span>份
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ranks-bd">
+                            <img src="images/cup-3.png" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <span class="cunt">4.</span>
+                        <div class="ranks-hd">
+                            <h6>邹城市第一书记</h6>
+                            <div class="ranks-progress">
+                                <div class="dis-progress">
+                                    报告总数 <span class="text-warning">5427</span>份
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="weui_tabbar fixed-nav-bar">
+    <a href="javascript:;" class="weui_tabbar_item weui_bar_item_on">
+        <div class="weui_tabbar_icon">
+            <i class="iconfont icon-icobusiness"></i>
+        </div>
+        <p class="weui_tabbar_label">办公</p>
+    </a>
+    <a href="javascript:;" class="weui_tabbar_item">
+        <div class="weui_tabbar_icon">
+            <i class="iconfont icon-icoinformation"></i>
+        </div>
+        <p class="weui_tabbar_label">资讯</p>
+    </a>
+    <a data-toggle="open-nav" href="javascript:;" class="weui_tabbar_item center-btn">
+        <img src="images/center-btn.png" alt="">
+    </a>
+    <a href="javascript:;" class="weui_tabbar_item">
+        <div class="weui_tabbar_icon">
+            <i class="iconfont icon-icotrends"></i>
+        </div>
+        <p class="weui_tabbar_label">动态</p>
+    </a>
+    <a href="javascript:;" class="weui_tabbar_item">
+        <div class="weui_tabbar_icon">
+            <i class="iconfont icon-icouser"></i>
+        </div>
+        <p class="weui_tabbar_label">我的</p>
+    </a>
+</div>
+
+<div id="nav-wrap" class="nav-wrap">
+    <div class="nav-list">
+        <dl class="nav-item-a">
+            <dt>
+                <a href="###">
+                    <i class="iconfont icon-ico-date"></i>
+                </a>
+            </dt>
+            <dd>记录日志</dd>
+        </dl>
+        <dl class="nav-item-b">
+            <dt>
+                <a href="###">
+                    <i class="iconfont icon-ico-family"></i>
+                </a>
+            </dt>
+            <dd>记录户情</dd>
+        </dl>
+        <dl class="nav-item-c">
+            <dt>
+                <a href="###">
+                    <i class="iconfont icon-ico-state"></i>
+                </a>
+            </dt>
+            <dd>发布状态</dd>
+        </dl>
+    </div>
+    <a href="###" data-toggle="closed-btn" class="closed-btn">
+        <img src="images/closed-btn.png" alt="">
+    </a>
+</div>
+
+<script src="js/base.min.js"></script>
+<script src="js/plugins/weui.js"></script>
+<script src="js/app.min.js"></script>
+
+
+</body>
+</html>
