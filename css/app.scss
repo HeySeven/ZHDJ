@@ -79,9 +79,9 @@ img {
 }
 
 .dot {
-  display: inline-block;
-  width: .18rem;
-  height: .18rem;
+  display: block;
+  width: 12px;
+  height: 12px;
   @include border-radius(50%);
   background-color: $color-lighter;
   &.dot-danger {
@@ -1000,7 +1000,17 @@ img {
     }
   }
 }
-
+.navbar-warning {
+  background-color: $color-warning;
+  .center {
+    color: #fff;
+  }
+  .left, .right {
+    .link {
+      color: #fff;
+    }
+  }
+}
 .navbar-purple {
   background-color: $color-purple;
   .center {
@@ -1013,6 +1023,16 @@ img {
   }
 }
 
+
+.bg-danger{
+  background-color: $color-danger!important;
+}
+.bg-warning{
+  background-color: $color-warning!important;
+}
+.bg-purple{
+  background-color: $color-purple!important;
+}
 .sign-panel {
   position: relative;
   background-color: #ffffff;

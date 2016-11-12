@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-<div class="navbar navbar-purple">
+<div class="navbar navbar-danger navbar-warning navbar-purple">
     <div class="navbar-inner">
         <div class="left">
             <a href="diary-secretary.html" class="link">
@@ -26,12 +26,12 @@
     </div>
 </div>
 <div class="container p-b-normal">
-    <div class="sign-voice-box">
+    <div class="sign-voice-box bg-danger bg-warning bg-purple">
         <div class="sign-voice-hd">
             邹城市第一书记
         </div>
         <div class="sign-voice-bd">
-            <a data-toggle="voice-play-btn" href="###" class="voice-play-btn">
+            <a href="###" class="voice-play-btn">
                 <i class="iconfont icon-fankui"></i>
             </a>
         </div>
@@ -39,7 +39,7 @@
     <div class="diary-wrap">
         <div class="diary-detail-header">
             <h1>邹城县香城镇留守儿童入学问题邹城县香城镇留守儿童入学问题</h1>
-            <a href="###" class="diary-detail-control"><i class="iconfont icon-shenglve"></i></a>
+            <a data-toggle="voice-play-btn" href="###" class="diary-detail-control"><i class="iconfont icon-shenglve"></i></a>
         </div>
         <div class="weui_cells weui_cells_form">
             <div class="weui_cell icon-cell">
@@ -64,11 +64,11 @@
                 </div>
             </div>
             <div class="sign-map">
-                <img src="images/sign-map-img.jpg" alt="">
+                <a href="javascript:;" id="get-position"><img src="images/sign-map-img.jpg" alt=""></a>
             </div>
         </div>
         <div class="weui_cells weui_cells_access m-t">
-            <a class="weui_cell icon-cell">
+            <a href="circumstances-detail.html" class="weui_cell icon-cell">
                 <div class="weui_cell_bd weui_cell_primary">
                     <p><i class="iconfont icon-iconlink"></i> 已绑定户情</p>
                 </div>
@@ -94,6 +94,14 @@
 <script src="js/app.min.js"></script>
 <script>
     $(function(){
+        //地址跳转
+        var urlStr = window.location.href;
+        console.log(urlStr);
+        $('#get-position').click(function () {
+            var hrefString = 'http://apis.map.qq.com/tools/locpicker?search=1&type=0&backurl=' + urlStr + '&key=K3HBZ-JBFHX-2ZT4R-7GJSW-FPGHQ-O6FW6&referer=智慧党建'
+            window.location.href = hrefString;
+        });
+
        $('[data-toggle="voice-play-btn"]').click(function(){
            $.actions({
                actions: [{

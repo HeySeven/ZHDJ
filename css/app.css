@@ -316,9 +316,9 @@ img {
   margin-bottom: 0.2rem !important; }
 
 .dot {
-  display: inline-block;
-  width: .18rem;
-  height: .18rem;
+  display: block;
+  width: 12px;
+  height: 12px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -1375,12 +1375,28 @@ img {
   .navbar-danger .left .link, .navbar-danger .right .link {
     color: #fff; }
 
+.navbar-warning {
+  background-color: #fc9b30; }
+  .navbar-warning .center {
+    color: #fff; }
+  .navbar-warning .left .link, .navbar-warning .right .link {
+    color: #fff; }
+
 .navbar-purple {
   background-color: #6f68be; }
   .navbar-purple .center {
     color: #fff; }
   .navbar-purple .left .link, .navbar-purple .right .link {
     color: #fff; }
+
+.bg-danger {
+  background-color: #ff423f !important; }
+
+.bg-warning {
+  background-color: #fc9b30 !important; }
+
+.bg-purple {
+  background-color: #6f68be !important; }
 
 .sign-panel {
   position: relative;
