@@ -7,7 +7,6 @@
     <meta name="renderer" content="webkit">
     <title>我的签到</title>
     <link rel="stylesheet" href="css/weui/weui.css">
-
     <link rel="stylesheet" href="css/jquery-weui/jquery-weui.css">
     <link rel="stylesheet" href="css/app.css">
 </head>
@@ -15,7 +14,7 @@
 <div class="navbar ui-border-b">
     <div class="navbar-inner">
         <div class="left">
-            <a href="#" class="link">
+            <a href="center.html" class="link">
                 <i class="iconfont icon-back"></i>
             </a>
         </div>
@@ -103,13 +102,13 @@
     </div>
 </div>
 <div class="weui_tabbar fixed-nav-bar">
-    <a href="javascript:;" class="weui_tabbar_item">
+    <a href="index.html" class="weui_tabbar_item">
         <div class="weui_tabbar_icon">
             <i class="iconfont icon-icobusiness"></i>
         </div>
         <p class="weui_tabbar_label">办公</p>
     </a>
-    <a href="javascript:;" class="weui_tabbar_item">
+    <a href="news.html" class="weui_tabbar_item">
         <div class="weui_tabbar_icon">
             <i class="iconfont icon-icoinformation"></i>
         </div>
@@ -118,13 +117,13 @@
     <a data-toggle="open-nav" href="javascript:;" class="weui_tabbar_item center-btn">
         <img src="images/center-btn.png" alt="">
     </a>
-    <a href="javascript:;" class="weui_tabbar_item">
+    <a href="trends.html" class="weui_tabbar_item">
         <div class="weui_tabbar_icon">
             <i class="iconfont icon-icotrends"></i>
         </div>
         <p class="weui_tabbar_label">动态</p>
     </a>
-    <a href="javascript:;" class="weui_tabbar_item weui_bar_item_on">
+    <a href="center.html" class="weui_tabbar_item  weui_bar_item_on">
         <div class="weui_tabbar_icon">
             <i class="iconfont icon-icouser"></i>
         </div>
@@ -136,7 +135,7 @@
     <div class="nav-list">
         <dl class="nav-item-a">
             <dt>
-                <a href="###">
+                <a href="diary.html">
                     <i class="iconfont icon-ico-date"></i>
                 </a>
             </dt>
@@ -144,7 +143,7 @@
         </dl>
         <dl class="nav-item-b">
             <dt>
-                <a href="###">
+                <a href="circumstances.html">
                     <i class="iconfont icon-ico-family"></i>
                 </a>
             </dt>
@@ -152,19 +151,124 @@
         </dl>
         <dl class="nav-item-c">
             <dt>
-                <a href="###">
+                <a href="publish.html">
                     <i class="iconfont icon-ico-state"></i>
                 </a>
             </dt>
             <dd>发布状态</dd>
         </dl>
     </div>
-    <a href="###" data-toggle="closed-btn" class="closed-btn">
+    <a href="javascript:;" data-toggle="closed-btn" class="closed-btn">
         <img src="images/closed-btn.png" alt="">
     </a>
 </div>
-<script src="js/base.min.js"></script>
-<script src="js/app.min.js"></script>
 
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<link rel="stylesheet" href="js/plugins/PhotoSwipe/photoswipe.css">
+<link rel="stylesheet" href="js/plugins/PhotoSwipe/default-skin/default-skin.css">
+<script src="js/base.min.js"></script>
+<script src="js/plugins/PhotoSwipe/photoswipe.min.js"></script>
+<script src="js/plugins/PhotoSwipe/photoswipe-ui-default.js"></script>
+<script src="js/app.min.js"></script>
+<script>
+    $(function(){
+       $('.log-img-list li').click(function(){
+           openPhotoSwipe();
+       });
+    });
+    var openPhotoSwipe = function() {
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+        // build items array
+        var items = [
+            {
+                src: 'images/media-img.jpg',
+                w: 236,
+                h: 182
+            },
+            {
+                src: 'images/media-img.jpg',
+                w: 236,
+                h: 182
+            }
+        ];
+        // define options (if needed)
+        var options = {
+            // history & focus options are disabled on CodePen
+            history: false,
+            focus: false,
+            showAnimationDuration: 0,
+            hideAnimationDuration: 0
+        };
+        var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+        gallery.init();
+    };
+
+</script>
 </body>
 </html>
