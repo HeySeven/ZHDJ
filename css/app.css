@@ -1740,12 +1740,12 @@ img {
     -moz-box-shadow: 0 5px 10px rgba(255, 66, 63, 0.32);
     box-shadow: 0 5px 10px rgba(255, 66, 63, 0.32); }
 
-.weui-picker-calendar {
+.weui-picker-modal.weui-picker-calendar {
   padding: .6rem .2rem;
   background: rgba(0, 0, 0, 0.7); }
-  .weui-picker-calendar .toolbar:after, .weui-picker-calendar .picker-calendar-week-days:after, .weui-picker-calendar .picker-calendar-row:after {
+  .weui-picker-modal.weui-picker-calendar .toolbar:after, .weui-picker-modal.weui-picker-calendar .picker-calendar-week-days:after, .weui-picker-modal.weui-picker-calendar .picker-calendar-row:after {
     display: none; }
-  .weui-picker-calendar .picker-calendar-week-days + .picker-calendar-months {
+  .weui-picker-modal.weui-picker-calendar .picker-calendar-week-days + .picker-calendar-months {
     background-color: #ffffff; }
 
 .icon-cell .weui_cell_hd .dot {
