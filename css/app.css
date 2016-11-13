@@ -132,9 +132,9 @@
     pointer-events: none; } }
 @font-face {
   font-family: "iconfont";
-  src: url("../fonts/iconfont.eot?t=1478938364864");
+  src: url("../fonts/iconfont.eot?t=1479006008048");
   /* IE9*/
-  src: url("../fonts/iconfont.eot?t=1478938364864#iefix") format("embedded-opentype"), url("../fonts/iconfont.woff?t=1478938364864") format("woff"), url("../fonts/iconfont.ttf?t=1478938364864") format("truetype"), url("../fonts/iconfont.svg?t=1478938364864#iconfont") format("svg");
+  src: url("../fonts/iconfont.eot?t=1479006008048#iefix") format("embedded-opentype"), url("../fonts/iconfont.woff?t=1479006008048") format("woff"), url("../fonts/iconfont.ttf?t=1479006008048") format("truetype"), url("../fonts/iconfont.svg?t=1479006008048#iconfont") format("svg");
   /* iOS 4.1- */ }
 .iconfont {
   font-family: "iconfont" !important;
@@ -262,13 +262,13 @@
   content: "\e691"; }
 
 .icon-ico-date:before {
-  content: "\e692"; }
-
-.icon-ico-state:before {
-  content: "\e694"; }
+  content: "\e695"; }
 
 .icon-ico-family:before {
-  content: "\e696"; }
+  content: "\e697"; }
+
+.icon-ico-state:before {
+  content: "\e698"; }
 
 * {
   -webkit-box-sizing: border-box;
@@ -1416,6 +1416,8 @@ img {
     width: 2.62rem;
     height: 2.62rem;
     text-align: center; }
+    .sign-panel .sign-btn input {
+      display: none; }
     .sign-panel .sign-btn img {
       width: 2.62rem;
       -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);

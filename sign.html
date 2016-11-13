@@ -28,9 +28,11 @@
     <div class="sign-panel">
         <div class="sign-panel-header">今日签到0次</div>
         <div class="sign-panel-body">
-            <a href="sign-entering.html" class="sign-btn">
+            <label class="sign-btn">
                 <img src="images/sign-btn-img.png" alt="">
-            </a>
+                <input id="sign-file" type="file">
+            </label>
+
         </div>
     </div>
     <div class="sign-history m-b">
@@ -111,6 +113,10 @@
 <script src="js/app.min.js"></script>
 <script>
     $(function () {
+        $('#sign-file').change(function () {
+            var urlArray = window.location.href.split("sign");
+            window.location.href = urlArray[0] + 'sign-entering' + urlArray[1];
+        });
         $("#inline-calendar").calendar({
             container: "#inline-calendar",
             input: "#sign-input",

@@ -15,24 +15,36 @@
 <div class="container">
     <div class="login-wrap">
         <h2>登录</h2>
-        <div class="login-group">
-            <input class="input-login" placeholder="登录名" type="text">
-        </div>
-        <div class="login-group">
-            <input class="input-login input-login-password" placeholder="密码" type="password">
-            <a id="clear-val" href="###" class="iconfont icon-icondelete" ></a>
-        </div>
-        <div class="forget-wrap">
-            <a id="forget-btn" href="###">忘记密码?</a>
-        </div>
-        <div class="login-group-btn">
-            <button class="login-submit">登录</button>
-        </div>
+        <form id="login-form" action="">
+            <div class="login-group">
+                <input class="input-login" placeholder="登录名" type="text" required>
+            </div>
+            <div class="login-group">
+                <input class="input-login input-login-password" placeholder="密码" type="password" required>
+                <a id="clear-val" href="###" class="iconfont icon-icondelete"></a>
+            </div>
+            <div class="forget-wrap">
+                <a id="forget-btn" href="###">忘记密码?</a>
+            </div>
+            <div class="login-group-btn">
+                <button id="login-submit" class="login-submit">登录</button>
+            </div>
+        </form>
     </div>
 </div>
 <script src="js/base.min.js"></script>
+<script src="js/plugins/weui.js"></script>
 <script src="js/app.min.js"></script>
 <script>
+    //表单验证
+    var $loginForm = $("#login-form");
+    $loginForm.form();
+    $('#login-submit').click(function () {
+        $loginForm.validate(function(){
+            var urlArray = window.location.href.split("login");
+            window.location.href = urlArray[0] + 'center' + urlArray[1];
+        });
+    });
     //clearVal
     var $publicTit = $('input.input-login-password');
     $(document).on("input propertychange", "input.input-login-password", function () {
@@ -49,7 +61,7 @@
         $(this).hide();
     });
 
-    $('#forget-btn').click(function(){
+    $('#forget-btn').click(function () {
         $.alert({
             title: '请联系管理员修改密码',
             text: '1345677@hotmail.com',
