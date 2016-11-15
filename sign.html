@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
     <title>签到</title>
     <link rel="stylesheet" href="css/weui/weui.css">
     <link rel="stylesheet" href="css/jquery-weui/jquery-weui.css">
@@ -120,7 +124,8 @@
         $("#inline-calendar").calendar({
             container: "#inline-calendar",
             input: "#sign-input",
-            value: ["2016-11-6", "2016-11-5"], //设置签到日期
+            multiple:true,
+            value: ["2016-11-06","2016-11-08"], //设置签到日期
             disabledVal: false, //禁用选择
             touchMove: false, //禁用月份切换
             toolbar: false //禁用年月选择

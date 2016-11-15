@@ -278,7 +278,8 @@
 html {
   background-color: #f7f7f7;
   height: 100%;
-  font-size: 50px; }
+  font-size: 50px;
+  -webkit-tap-highlight-color: transparent; }
 
 body {
   font-size: 16px;
@@ -286,6 +287,12 @@ body {
 
 img {
   max-width: 100%; }
+
+a, button, input, textarea, label {
+  -webkit-appearance: none; }
+
+img {
+  -webkit-touch-callout: none; }
 
 .ul, .ol {
   list-style: none; }
@@ -644,6 +651,7 @@ img {
   padding: 0.2rem; }
 
 .media-item {
+  position: relative;
   display: block; }
   .media-item + .media-item {
     margin-top: 0.2rem; }
@@ -687,7 +695,10 @@ img {
         .media-item .media-link .media-bd .media-disc span + span {
           margin-left: 0.1rem; }
         .media-item .media-link .media-bd .media-disc .more-control {
-          float: right; }
+          position: absolute;
+          font-size: .4rem;
+          right: .2rem;
+          bottom: 0; }
 
 .diary-detail-wrap {
   padding: 0 0.3rem;
@@ -2005,9 +2016,11 @@ img {
     flex: 1;
     font-weight: normal;
     font-size: .34rem; }
-  .diary-detail-header .diary-detail-control i {
-    color: #3a3a3a;
-    font-size: 0.36rem; }
+  .diary-detail-header .diary-detail-control {
+    margin-left: .3rem; }
+    .diary-detail-header .diary-detail-control i {
+      color: #3a3a3a;
+      font-size: .6rem; }
 
 .center-header {
   text-align: center;
@@ -2331,5 +2344,41 @@ img {
   z-index: 500; }
   .fixed-nav + .container {
     padding-top: .8rem; }
+
+.diary-filter {
+  background-color: #fff;
+  padding: 0 0.2rem;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: .8rem;
+  z-index: 500;
+  -webkit-box-shadow: 0 3px 3px rgba(199, 199, 199, 0.4);
+  -moz-box-shadow: 0 3px 3px rgba(199, 199, 199, 0.4);
+  box-shadow: 0 3px 3px rgba(199, 199, 199, 0.4); }
+  .diary-filter + .container {
+    padding-top: 1.52rem; }
+  .diary-filter .diary-filter-list {
+    list-style: none;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    .diary-filter .diary-filter-list li {
+      text-align: center;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -moz-box-flex: 1;
+      -moz-flex: 1;
+      -ms-flex: 1;
+      flex: 1; }
+      .diary-filter .diary-filter-list li.active a {
+        border-bottom: 2px solid #ff423f; }
+      .diary-filter .diary-filter-list li a {
+        display: inline-block;
+        padding: .1rem;
+        font-size: 0.28rem;
+        color: #3a3a3a; }
 
 /*# sourceMappingURL=app.css.map */

@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
     <title>login页面</title>
     <link rel="stylesheet" href="css/weui/weui.css">
-
     <link rel="stylesheet" href="css/jquery-weui/jquery-weui.css">
     <link rel="stylesheet" href="css/app.css">
 </head>
@@ -27,7 +30,8 @@
                 <a id="forget-btn" href="###">忘记密码?</a>
             </div>
             <div class="login-group-btn">
-                <button id="login-submit" class="login-submit">登录</button>
+                <a id="login-submit" class="login-submit" href="center.html">登录</a>
+                <!--<button id="login-submit" class="login-submit">登录</button>-->
             </div>
         </form>
     </div>
@@ -39,12 +43,9 @@
     //表单验证
     var $loginForm = $("#login-form");
     $loginForm.form();
-    $('#login-submit').click(function () {
-        $loginForm.validate(function(){
-            var urlArray = window.location.href.split("login");
-            window.location.href = urlArray[0] + 'center' + urlArray[1];
-        });
-    });
+    /*$('#login-submit').click(function () {
+        $loginForm.validate();
+    });*/
     //clearVal
     var $publicTit = $('input.input-login-password');
     $(document).on("input propertychange", "input.input-login-password", function () {

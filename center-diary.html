@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
     <title>我的日记</title>
     <link rel="stylesheet" href="css/weui/weui.css">
-
     <link rel="stylesheet" href="css/jquery-weui/jquery-weui.css">
     <link rel="stylesheet" href="css/app.css">
 </head>
@@ -24,6 +27,14 @@
         </div>
     </div>
 </div>
+<div class="diary-filter">
+    <ul class="diary-filter-list">
+        <li class="active"><a href="###">未办理</a></li>
+        <li><a href="###">正在办理</a></li>
+        <li><a href="###">已办理</a></li>
+        <li><a href="###">无需处理</a></li>
+    </ul>
+</div>
 <div class="container">
     <div class="news-wrap">
         <ul id="list" class="news-media">
@@ -35,7 +46,7 @@
                         <div class="media-disc">
                             <span>留守儿童</span>
                             <span>4小时前</span>
-                            <span href="###" class="more-control iconfont icon-shenglve"></span>
+                            <span data-toggle="voice-play-btn" href="###" class="more-control iconfont icon-shenglve"></span>
                         </div>
                     </div>
                 </a>
@@ -48,7 +59,7 @@
                         <div class="media-disc">
                             <span>留守儿童</span>
                             <span>4小时前</span>
-                            <span href="###" class="more-control iconfont icon-shenglve"></span>
+                            <span data-toggle="voice-play-btn" href="###" class="more-control iconfont icon-shenglve"></span>
                         </div>
                     </div>
                 </a>
@@ -61,7 +72,7 @@
                         <div class="media-disc">
                             <span>留守儿童</span>
                             <span>4小时前</span>
-                            <span href="###" class="more-control iconfont icon-shenglve"></span>
+                            <span data-toggle="voice-play-btn" href="###" class="more-control iconfont icon-shenglve"></span>
                         </div>
                     </div>
                 </a>
@@ -74,7 +85,7 @@
                         <div class="media-disc">
                             <span>留守儿童</span>
                             <span>4小时前</span>
-                            <span href="###" class="more-control iconfont icon-shenglve"></span>
+                            <span data-toggle="voice-play-btn" href="###" class="more-control iconfont icon-shenglve"></span>
                         </div>
                     </div>
                 </a>
@@ -87,7 +98,7 @@
                         <div class="media-disc">
                             <span>留守儿童</span>
                             <span>4小时前</span>
-                            <span href="###" class="more-control iconfont icon-shenglve"></span>
+                            <span data-toggle="voice-play-btn" href="###" class="more-control iconfont icon-shenglve"></span>
                         </div>
                     </div>
                 </a>
@@ -98,8 +109,6 @@
             正在加载...
         </div>
     </div>
-
-
 </div>
 <div class="weui_tabbar fixed-nav-bar">
     <a href="index.html" class="weui_tabbar_item">
@@ -162,6 +171,8 @@
         <img src="images/closed-btn.png" alt="">
     </a>
 </div>
+<!--日记处理-->
+<input type="hidden" id="handle" value="正在办理">
 
 <script src="js/base.min.js"></script>
 <script src="js/plugins/weui.js"></script>
@@ -189,6 +200,36 @@
                         '            </li>');
                 loading = false;
             }, 500);   //模拟延迟
+        });
+        $('#handle').select({
+            title: "迁移日记至",
+            items: ["未办理", "正在办理", "已办理", "无需处理"],
+            closeText: '<i class="iconfont icon-back"></i>'
+        });
+        $('[data-toggle="voice-play-btn"]').click(function(event){
+            $.actions({
+                actions: [{
+                    text: "修改",
+                    onClick: function() {
+                        //do something
+                        var urlArray = window.location.href.split("diary-secretary");
+                        window.location.href = urlArray[0] + 'diary' + urlArray[1];
+                    }
+                },{
+                    text: "删除",
+                    onClick: function() {
+                        //do something
+                        $.toast("删除成功");
+                    }
+                },{
+                    text: "办理",
+                    onClick: function() {
+                        //do something
+                        $("#handle").select("open")
+                    }
+                }]
+            });
+            return false;
         });
     })
 </script>
