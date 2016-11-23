@@ -1071,13 +1071,15 @@ img {
     width: 2.62rem;
     height: 2.62rem;
     text-align: center;
+    @include border-radius(50%);
+    @include box-shadow(0 5px 10px rgba(0, 0, 0, 0.15));
     input {
       display: none;
     }
     img {
       width: 2.62rem;
-      @include box-shadow(0 5px 10px rgba(0, 0, 0, 0.15));
       @include border-radius(50%);
+      @include animation(rotate 10s linear infinite);
     }
     dl {
       position: absolute;
@@ -1086,7 +1088,18 @@ img {
       color: $color-danger;
       line-height: 1;
       padding-top: .5rem;
+      z-index: 1;
     }
+  }
+}
+
+@include keyframes(rotate){
+  from {
+
+    @include transform(rotate(0deg));
+  }
+  to {
+    @include transform(rotate(360deg));
   }
 }
 
@@ -1154,7 +1167,11 @@ img {
     }
   }
 }
-
+.picker-calendar-day span{
+  width: .6rem;
+  height: .6rem;
+  line-height:.6rem;
+}
 .sign-log-wrap {
   position: relative;
   padding: $space-sm;
@@ -2058,7 +2075,7 @@ img {
       text-align: center;
       @include flex(1);
       &.active {
-        a{
+        a {
           border-bottom: 2px solid $color-danger;
         }
       }
