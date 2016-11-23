@@ -1079,7 +1079,9 @@ img {
     img {
       width: 2.62rem;
       @include border-radius(50%);
-      @include animation(rotate 10s linear infinite);
+      &.animate{
+        @include animation(rotate 10s linear infinite);
+      }
     }
     dl {
       position: absolute;
